@@ -10,18 +10,48 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *ExistingDinnerPartyButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *CreateNewDinnerPartyButton;
+
+
+
+- (IBAction)CreateNewDinnerPartyButtonPressed:(id)sender;
+- (IBAction)ExistingDinnerPartyButtonPressed:(id)sender;
+
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self setUpButtons];
+ 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+   
 }
 
+-(void)setUpButtons {
+//    self.CreateNewDinnerPartyButton.titleEdgeInsets = UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0);
+//    self.ExistingDinnerPartyButton.titleEdgeInsets = UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0);
+    
+    self.CreateNewDinnerPartyButton.layer.cornerRadius = 4;
+    self.ExistingDinnerPartyButton.layer.cornerRadius = 4;
+    
+}
+
+
+- (IBAction)CreateNewDinnerPartyButtonPressed:(id)sender {
+    //show segue to CreateNewDinnerParty VC
+    
+}
+
+- (IBAction)ExistingDinnerPartyButtonPressed:(id)sender {
+    //show segue to ExistingDinnerParty VC
+    
+}
 @end

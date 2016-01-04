@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9019D7DB1C370FEB00A3A81B /* Plate.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9019D7DA1C370FEB00A3A81B /* Plate.jpeg */; };
+		9019D7DE1C3B370A00A3A81B /* CreateNewDinnerPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9019D7DD1C3B370A00A3A81B /* CreateNewDinnerPartyViewController.m */; };
+		9019D7E11C3B3A0400A3A81B /* ExistingDInnerPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9019D7E01C3B3A0400A3A81B /* ExistingDInnerPartyViewController.m */; };
+		9019D7E51C3B3B6500A3A81B /* Prep.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9019D7E41C3B3B6500A3A81B /* Prep.jpg */; };
+		9019D7E71C3B3C6300A3A81B /* lamb.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9019D7E61C3B3C6300A3A81B /* lamb.jpeg */; };
 		90A904A41C370A7B007C2B7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A904A31C370A7B007C2B7D /* main.m */; };
 		90A904A71C370A7B007C2B7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A904A61C370A7B007C2B7D /* AppDelegate.m */; };
 		90A904AA1C370A7B007C2B7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A904A91C370A7B007C2B7D /* ViewController.m */; };
@@ -35,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9019D7DA1C370FEB00A3A81B /* Plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Plate.jpeg; sourceTree = "<group>"; };
+		9019D7DC1C3B370A00A3A81B /* CreateNewDinnerPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateNewDinnerPartyViewController.h; sourceTree = "<group>"; };
+		9019D7DD1C3B370A00A3A81B /* CreateNewDinnerPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewDinnerPartyViewController.m; sourceTree = "<group>"; };
+		9019D7DF1C3B3A0400A3A81B /* ExistingDInnerPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExistingDInnerPartyViewController.h; sourceTree = "<group>"; };
+		9019D7E01C3B3A0400A3A81B /* ExistingDInnerPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExistingDInnerPartyViewController.m; sourceTree = "<group>"; };
+		9019D7E41C3B3B6500A3A81B /* Prep.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Prep.jpg; sourceTree = "<group>"; };
+		9019D7E61C3B3C6300A3A81B /* lamb.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lamb.jpeg; sourceTree = "<group>"; };
 		90A9049F1C370A7B007C2B7D /* DinnerPartyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DinnerPartyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A904A31C370A7B007C2B7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		90A904A51C370A7B007C2B7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9019D7D91C370C6F00A3A81B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				90A904B01C370A7B007C2B7D /* LaunchScreen.storyboard */,
+				90A904AB1C370A7B007C2B7D /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		90A904961C370A7B007C2B7D = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +126,11 @@
 				90A904A61C370A7B007C2B7D /* AppDelegate.m */,
 				90A904A81C370A7B007C2B7D /* ViewController.h */,
 				90A904A91C370A7B007C2B7D /* ViewController.m */,
-				90A904AB1C370A7B007C2B7D /* Main.storyboard */,
-				90A904AE1C370A7B007C2B7D /* Assets.xcassets */,
-				90A904B01C370A7B007C2B7D /* LaunchScreen.storyboard */,
-				90A904B31C370A7B007C2B7D /* Info.plist */,
+				9019D7DC1C3B370A00A3A81B /* CreateNewDinnerPartyViewController.h */,
+				9019D7DD1C3B370A00A3A81B /* CreateNewDinnerPartyViewController.m */,
+				9019D7DF1C3B3A0400A3A81B /* ExistingDInnerPartyViewController.h */,
+				9019D7E01C3B3A0400A3A81B /* ExistingDInnerPartyViewController.m */,
+				9019D7D91C370C6F00A3A81B /* Views */,
 				90A904A21C370A7B007C2B7D /* Supporting Files */,
 			);
 			path = DinnerPartyTracker;
@@ -117,6 +139,11 @@
 		90A904A21C370A7B007C2B7D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				90A904AE1C370A7B007C2B7D /* Assets.xcassets */,
+				9019D7E61C3B3C6300A3A81B /* lamb.jpeg */,
+				9019D7E41C3B3B6500A3A81B /* Prep.jpg */,
+				9019D7DA1C370FEB00A3A81B /* Plate.jpeg */,
+				90A904B31C370A7B007C2B7D /* Info.plist */,
 				90A904A31C370A7B007C2B7D /* main.m */,
 			);
 			name = "Supporting Files";
@@ -243,9 +270,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9019D7DB1C370FEB00A3A81B /* Plate.jpeg in Resources */,
 				90A904B21C370A7B007C2B7D /* LaunchScreen.storyboard in Resources */,
+				9019D7E51C3B3B6500A3A81B /* Prep.jpg in Resources */,
 				90A904AF1C370A7B007C2B7D /* Assets.xcassets in Resources */,
 				90A904AD1C370A7B007C2B7D /* Main.storyboard in Resources */,
+				9019D7E71C3B3C6300A3A81B /* lamb.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9019D7DE1C3B370A00A3A81B /* CreateNewDinnerPartyViewController.m in Sources */,
+				9019D7E11C3B3A0400A3A81B /* ExistingDInnerPartyViewController.m in Sources */,
 				90A904AA1C370A7B007C2B7D /* ViewController.m in Sources */,
 				90A904A71C370A7B007C2B7D /* AppDelegate.m in Sources */,
 				90A904A41C370A7B007C2B7D /* main.m in Sources */,
@@ -500,6 +532,7 @@
 				90A904CE1C370A7B007C2B7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90A904CF1C370A7B007C2B7D /* Build configuration list for PBXNativeTarget "DinnerPartyTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +541,7 @@
 				90A904D11C370A7B007C2B7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90A904D21C370A7B007C2B7D /* Build configuration list for PBXNativeTarget "DinnerPartyTrackerUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +550,7 @@
 				90A904D41C370A7B007C2B7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
