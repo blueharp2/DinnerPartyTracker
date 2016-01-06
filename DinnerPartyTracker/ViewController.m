@@ -27,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpButtons];
+    [self setUpNavigationBar];
  
 }
 
@@ -44,6 +45,13 @@
     
 }
 
+-(void)setUpNavigationBar {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]}];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+}
 
 - (IBAction)CreateNewDinnerPartyButtonPressed:(id)sender {
     //show segue to CreateNewDinnerParty VC
