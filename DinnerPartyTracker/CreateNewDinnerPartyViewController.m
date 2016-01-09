@@ -9,6 +9,9 @@
 #import "CreateNewDinnerPartyViewController.h"
 
 @interface CreateNewDinnerPartyViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *DateOfDinnerPartyTextField;
+@property (weak, nonatomic) IBOutlet UITextField *GuestsNamesTextField;
+@property (weak, nonatomic) IBOutlet UITableView *MenuItemsTableVIew;
 
 @end
 
