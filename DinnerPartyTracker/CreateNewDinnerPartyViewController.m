@@ -8,10 +8,12 @@
 
 #import "CreateNewDinnerPartyViewController.h"
 
-@interface CreateNewDinnerPartyViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *DateOfDinnerPartyTextField;
-@property (weak, nonatomic) IBOutlet UITextField *GuestsNamesTextField;
-@property (weak, nonatomic) IBOutlet UITableView *MenuItemsTableVIew;
+@interface CreateNewDinnerPartyViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *dateOfDinnerPartyTextField;
+@property (weak, nonatomic) IBOutlet UITextField *guestsNamesTextField;
+@property (weak, nonatomic) IBOutlet UITableView *menuItemsTableVIew;
+@property (weak, nonatomic) IBOutlet UIButton *addMenuItemButton;
 
 @end
 
@@ -19,12 +21,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.addMenuItemButton.layer.cornerRadius = 4;
+    //[self setupMainViewController];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)setupMainViewController{
+    [self.dateOfDinnerPartyTextField setDelegate:self];
+    [self.guestsNamesTextField setDelegate:self];
+    self.menuItemsTableVIew.delegate = self;
+    self.menuItemsTableVIew.dataSource = self;
+    self.addMenuItemButton.layer.cornerRadius = 4;
+    
+    
+    
 }
 
 /*
