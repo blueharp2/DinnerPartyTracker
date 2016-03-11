@@ -16,19 +16,8 @@
 @property(strong,nonatomic)MenuItems *menuItems;
 
 
+-(id)initWithDateOfDinnerParty:(NSDate *)dateOfDinnerParty
+                   guestsNames:(NSString *)guestsNames
+                     menuItems:(MenuItems *)menuItems;
 
-
-
-
-//@dynamic dateOfDinnerParty;
-//@dynamic guestsNames;
-//@dynamic menuItems;
-//
-//-(id)initWithDateOfDinnerParty:(NSDate *)dateOfDinnerParty
-//                   guestsNames:(NSString *)guestsNames
-//                     menuItems:(MenuItems *)menuItems{
-//    if ((self = [super init])) {
-//        self.dateOfDinnerParty = dateOfDinnerParty;
-//        self.guestsNames = guestsNames;
-//        self.menuItems = menuItems;
 @end

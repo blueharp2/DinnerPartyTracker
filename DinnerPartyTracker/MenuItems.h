@@ -10,4 +10,10 @@
 
 @interface MenuItems : NSObject
 
+@property(copy, nonatomic) NSString *menuItemName;
+@property(copy, nonatomic) NSString *cookboookName;
+
+-(id)initWithMenuItemName:(NSString *)menuItemName
+             cookbookName:(NSString *)cookbookName;
+
 @end
