@@ -245,15 +245,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r17-jq-j85">
+                                <rect key="frame" x="275" y="110" width="50" height="33"/>
+                                <color key="backgroundColor" red="0.0" green="0.50990351040000004" blue="0.1074766387" alpha="0.75675675679999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="uMh-Hi-P2B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveMenuItemButtonPressed:" destination="Gpc-Z4-crU" eventType="touchUpInside" id="oMz-j1-yxj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="r17-jq-j85" firstAttribute="centerX" secondItem="WZk-We-3bJ" secondAttribute="centerX" id="3Zo-YK-zI2"/>
                             <constraint firstAttribute="trailing" secondItem="KWj-ev-hYQ" secondAttribute="trailing" id="6YC-VV-PNQ"/>
                             <constraint firstAttribute="trailing" secondItem="Tmk-Rk-iQA" secondAttribute="trailing" constant="20" id="8eZ-Jc-7Fr"/>
                             <constraint firstItem="hpo-Hm-UM3" firstAttribute="top" secondItem="q2Z-0l-vyW" secondAttribute="bottom" constant="10" id="GKM-pV-4ec"/>
                             <constraint firstItem="KWj-ev-hYQ" firstAttribute="top" secondItem="WZk-We-3bJ" secondAttribute="top" id="MvX-VC-kBd"/>
                             <constraint firstAttribute="trailing" secondItem="hpo-Hm-UM3" secondAttribute="trailing" constant="20" id="XcX-JM-Wny"/>
                             <constraint firstItem="Tmk-Rk-iQA" firstAttribute="leading" secondItem="WZk-We-3bJ" secondAttribute="leading" constant="20" id="YrZ-F8-bZR"/>
+                            <constraint firstItem="r17-jq-j85" firstAttribute="top" secondItem="Tmk-Rk-iQA" secondAttribute="bottom" constant="10" id="ZuW-CX-K2z"/>
                             <constraint firstItem="Tmk-Rk-iQA" firstAttribute="top" secondItem="hpo-Hm-UM3" secondAttribute="bottom" constant="10" id="ghl-mq-uSq"/>
                             <constraint firstItem="hpo-Hm-UM3" firstAttribute="leading" secondItem="WZk-We-3bJ" secondAttribute="leading" constant="20" id="mXe-sy-3ZM"/>
                             <constraint firstAttribute="bottom" secondItem="KWj-ev-hYQ" secondAttribute="bottom" id="tB9-is-yhS"/>
@@ -263,6 +279,7 @@
                     <connections>
                         <outlet property="cookbookTextField" destination="Tmk-Rk-iQA" id="XSy-Xi-8Ip"/>
                         <outlet property="menuItemTextField" destination="hpo-Hm-UM3" id="UO0-vR-RYt"/>
+                        <outlet property="saveMenuItemButton" destination="r17-jq-j85" id="f1m-Iu-ETI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqI-jm-Dpp" userLabel="First Responder" sceneMemberID="firstResponder"/>

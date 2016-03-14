@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *menuItemTextField;
 @property (weak, nonatomic) IBOutlet UITextField *cookbookTextField;
+@property (weak, nonatomic) IBOutlet UIButton *saveMenuItemButton;
+- (IBAction)saveMenuItemButtonPressed:(UIButton *)sender;
 
 @end
 
@@ -19,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setupDetailViewController];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,14 +30,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)setupDetailViewController{
+    [self.menuItemTextField setDelegate:self];
+    [self.cookbookTextField setDelegate:self];
+    self.saveMenuItemButton.layer.cornerRadius = 4;
+    
 }
-*/
 
+- (IBAction)saveMenuItemButtonPressed:(UIButton *)sender {
+    [self.menuItemTextField resignFirstResponder];
+    [self.cookbookTextField resignFirstResponder];
+    
+    
+}
 @end
