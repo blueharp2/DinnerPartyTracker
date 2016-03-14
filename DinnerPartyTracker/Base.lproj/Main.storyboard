@@ -260,6 +260,10 @@
                             <constraint firstItem="KWj-ev-hYQ" firstAttribute="leading" secondItem="WZk-We-3bJ" secondAttribute="leading" id="yWg-KH-8Y0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cookbookTextField" destination="Tmk-Rk-iQA" id="XSy-Xi-8Ip"/>
+                        <outlet property="menuItemTextField" destination="hpo-Hm-UM3" id="UO0-vR-RYt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqI-jm-Dpp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

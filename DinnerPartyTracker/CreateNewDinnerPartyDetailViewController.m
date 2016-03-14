@@ -8,7 +8,10 @@
 
 #import "CreateNewDinnerPartyDetailViewController.h"
 
-@interface CreateNewDinnerPartyDetailViewController ()
+@interface CreateNewDinnerPartyDetailViewController () <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *menuItemTextField;
+@property (weak, nonatomic) IBOutlet UITextField *cookbookTextField;
 
 @end
 
