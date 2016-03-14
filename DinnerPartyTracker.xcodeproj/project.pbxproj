@@ -12,6 +12,7 @@
 		9019D7E11C3B3A0400A3A81B /* ExistingDInnerPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9019D7E01C3B3A0400A3A81B /* ExistingDInnerPartyViewController.m */; };
 		9019D7E51C3B3B6500A3A81B /* Prep.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9019D7E41C3B3B6500A3A81B /* Prep.jpg */; };
 		9019D7E71C3B3C6300A3A81B /* lamb.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9019D7E61C3B3C6300A3A81B /* lamb.jpeg */; };
+		902BBEDB1C976F1B00588CBB /* CreateNewDinnerPartyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 902BBEDA1C976F1B00588CBB /* CreateNewDinnerPartyDetailViewController.m */; };
 		9092F6721C937E080034F225 /* DinnerParty.m in Sources */ = {isa = PBXBuildFile; fileRef = 9092F6711C937E080034F225 /* DinnerParty.m */; };
 		9092F6761C9381610034F225 /* MenuItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 9092F6751C9381610034F225 /* MenuItems.m */; };
 		90A904A41C370A7B007C2B7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A904A31C370A7B007C2B7D /* main.m */; };
@@ -49,6 +50,8 @@
 		9019D7E01C3B3A0400A3A81B /* ExistingDInnerPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExistingDInnerPartyViewController.m; sourceTree = "<group>"; };
 		9019D7E41C3B3B6500A3A81B /* Prep.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Prep.jpg; sourceTree = "<group>"; };
 		9019D7E61C3B3C6300A3A81B /* lamb.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lamb.jpeg; sourceTree = "<group>"; };
+		902BBED91C976F1B00588CBB /* CreateNewDinnerPartyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateNewDinnerPartyDetailViewController.h; sourceTree = "<group>"; };
+		902BBEDA1C976F1B00588CBB /* CreateNewDinnerPartyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewDinnerPartyDetailViewController.m; sourceTree = "<group>"; };
 		9092F6701C937E080034F225 /* DinnerParty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DinnerParty.h; sourceTree = "<group>"; };
 		9092F6711C937E080034F225 /* DinnerParty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DinnerParty.m; sourceTree = "<group>"; };
 		9092F6741C9381610034F225 /* MenuItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItems.h; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				90A904A91C370A7B007C2B7D /* ViewController.m */,
 				9019D7DC1C3B370A00A3A81B /* CreateNewDinnerPartyViewController.h */,
 				9019D7DD1C3B370A00A3A81B /* CreateNewDinnerPartyViewController.m */,
+				902BBED91C976F1B00588CBB /* CreateNewDinnerPartyDetailViewController.h */,
+				902BBEDA1C976F1B00588CBB /* CreateNewDinnerPartyDetailViewController.m */,
 				9019D7DF1C3B3A0400A3A81B /* ExistingDInnerPartyViewController.h */,
 				9019D7E01C3B3A0400A3A81B /* ExistingDInnerPartyViewController.m */,
 				9092F6731C937E140034F225 /* Models */,
@@ -323,6 +328,7 @@
 				90A904AA1C370A7B007C2B7D /* ViewController.m in Sources */,
 				90A904A71C370A7B007C2B7D /* AppDelegate.m in Sources */,
 				9092F6721C937E080034F225 /* DinnerParty.m in Sources */,
+				902BBEDB1C976F1B00588CBB /* CreateNewDinnerPartyDetailViewController.m in Sources */,
 				9092F6761C9381610034F225 /* MenuItems.m in Sources */,
 				90A904A41C370A7B007C2B7D /* main.m in Sources */,
 			);

@@ -172,6 +172,9 @@
                                 <state key="normal" title="+">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Gpc-Z4-crU" kind="modal" identifier="segueToCreateDetailVC" id="AHp-bf-rtr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -217,10 +220,10 @@
             </objects>
             <point key="canvasLocation" x="1798" y="387"/>
         </scene>
-        <!--View Controller-->
+        <!--Create New Dinner Party Detail View Controller-->
         <scene sceneID="Era-9J-n1R">
             <objects>
-                <viewController id="Gpc-Z4-crU" sceneMemberID="viewController">
+                <viewController id="Gpc-Z4-crU" customClass="CreateNewDinnerPartyDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q2Z-0l-vyW"/>
                         <viewControllerLayoutGuide type="bottom" id="xn1-KT-iA1"/>
@@ -228,7 +231,34 @@
                     <view key="view" contentMode="scaleToFill" id="WZk-We-3bJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Prep.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="KWj-ev-hYQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Menu Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hpo-Hm-UM3">
+                                <rect key="frame" x="20" y="30" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cookbook Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tmk-Rk-iQA">
+                                <rect key="frame" x="20" y="70" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KWj-ev-hYQ" secondAttribute="trailing" id="6YC-VV-PNQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Tmk-Rk-iQA" secondAttribute="trailing" constant="20" id="8eZ-Jc-7Fr"/>
+                            <constraint firstItem="hpo-Hm-UM3" firstAttribute="top" secondItem="q2Z-0l-vyW" secondAttribute="bottom" constant="10" id="GKM-pV-4ec"/>
+                            <constraint firstItem="KWj-ev-hYQ" firstAttribute="top" secondItem="WZk-We-3bJ" secondAttribute="top" id="MvX-VC-kBd"/>
+                            <constraint firstAttribute="trailing" secondItem="hpo-Hm-UM3" secondAttribute="trailing" constant="20" id="XcX-JM-Wny"/>
+                            <constraint firstItem="Tmk-Rk-iQA" firstAttribute="leading" secondItem="WZk-We-3bJ" secondAttribute="leading" constant="20" id="YrZ-F8-bZR"/>
+                            <constraint firstItem="Tmk-Rk-iQA" firstAttribute="top" secondItem="hpo-Hm-UM3" secondAttribute="bottom" constant="10" id="ghl-mq-uSq"/>
+                            <constraint firstItem="hpo-Hm-UM3" firstAttribute="leading" secondItem="WZk-We-3bJ" secondAttribute="leading" constant="20" id="mXe-sy-3ZM"/>
+                            <constraint firstAttribute="bottom" secondItem="KWj-ev-hYQ" secondAttribute="bottom" id="tB9-is-yhS"/>
+                            <constraint firstItem="KWj-ev-hYQ" firstAttribute="leading" secondItem="WZk-We-3bJ" secondAttribute="leading" id="yWg-KH-8Y0"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqI-jm-Dpp" userLabel="First Responder" sceneMemberID="firstResponder"/>
