@@ -173,7 +173,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Gpc-Z4-crU" kind="modal" identifier="segueToCreateDetailVC" id="AHp-bf-rtr"/>
+                                    <segue destination="Gpc-Z4-crU" kind="show" identifier="segueToCreateDetailVC" id="AHp-bf-rtr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -232,21 +232,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Prep.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="KWj-ev-hYQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Prep.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="KWj-ev-hYQ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Menu Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hpo-Hm-UM3">
-                                <rect key="frame" x="20" y="30" width="560" height="30"/>
+                                <rect key="frame" x="20" y="75" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cookbook Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tmk-Rk-iQA">
-                                <rect key="frame" x="20" y="70" width="560" height="30"/>
+                                <rect key="frame" x="20" y="115" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r17-jq-j85">
-                                <rect key="frame" x="275" y="110" width="50" height="33"/>
+                                <rect key="frame" x="275" y="155" width="50" height="33"/>
                                 <color key="backgroundColor" red="0.0" green="0.50990351040000004" blue="0.1074766387" alpha="0.75675675679999999" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="uMh-Hi-P2B"/>
@@ -273,8 +273,14 @@
                             <constraint firstItem="Tmk-Rk-iQA" firstAttribute="top" secondItem="hpo-Hm-UM3" secondAttribute="bottom" constant="10" id="ghl-mq-uSq"/>
                             <constraint firstItem="hpo-Hm-UM3" firstAttribute="leading" secondItem="WZk-We-3bJ" secondAttribute="leading" constant="20" id="mXe-sy-3ZM"/>
                             <constraint firstAttribute="bottom" secondItem="KWj-ev-hYQ" secondAttribute="bottom" id="tB9-is-yhS"/>
+                            <constraint firstItem="hpo-Hm-UM3" firstAttribute="top" secondItem="WZk-We-3bJ" secondAttribute="top" constant="75" id="uPa-OG-hmK"/>
                             <constraint firstItem="KWj-ev-hYQ" firstAttribute="leading" secondItem="WZk-We-3bJ" secondAttribute="leading" id="yWg-KH-8Y0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GKM-pV-4ec"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="cookbookTextField" destination="Tmk-Rk-iQA" id="XSy-Xi-8Ip"/>
