@@ -23,6 +23,7 @@
 		90A904B21C370A7B007C2B7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A904B01C370A7B007C2B7D /* LaunchScreen.storyboard */; };
 		90A904BD1C370A7B007C2B7D /* DinnerPartyTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A904BC1C370A7B007C2B7D /* DinnerPartyTrackerTests.m */; };
 		90A904C81C370A7B007C2B7D /* DinnerPartyTrackerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A904C71C370A7B007C2B7D /* DinnerPartyTrackerUITests.m */; };
+		F741C529879FDA013EA591BE /* Pods_DinnerPartyTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C37329D79E3309FF7BA599 /* Pods_DinnerPartyTracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FC5A7E6CA8E31AC958B234C /* Pods-DinnerPartyTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DinnerPartyTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-DinnerPartyTracker/Pods-DinnerPartyTracker.release.xcconfig"; sourceTree = "<group>"; };
+		3ACD63BD6C772A36DC44F8B1 /* Pods-DinnerPartyTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DinnerPartyTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DinnerPartyTracker/Pods-DinnerPartyTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		9019D7DA1C370FEB00A3A81B /* Plate.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Plate.jpeg; sourceTree = "<group>"; };
 		9019D7DC1C3B370A00A3A81B /* CreateNewDinnerPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateNewDinnerPartyViewController.h; sourceTree = "<group>"; };
 		9019D7DD1C3B370A00A3A81B /* CreateNewDinnerPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewDinnerPartyViewController.m; sourceTree = "<group>"; };
@@ -72,6 +75,7 @@
 		90A904C31C370A7B007C2B7D /* DinnerPartyTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DinnerPartyTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A904C71C370A7B007C2B7D /* DinnerPartyTrackerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DinnerPartyTrackerUITests.m; sourceTree = "<group>"; };
 		90A904C91C370A7B007C2B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8C37329D79E3309FF7BA599 /* Pods_DinnerPartyTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DinnerPartyTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F741C529879FDA013EA591BE /* Pods_DinnerPartyTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +104,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24919D06CA54FD8A1A867014 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3ACD63BD6C772A36DC44F8B1 /* Pods-DinnerPartyTracker.debug.xcconfig */,
+				2FC5A7E6CA8E31AC958B234C /* Pods-DinnerPartyTracker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4B910693FF1FE1B779D36E89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8C37329D79E3309FF7BA599 /* Pods_DinnerPartyTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9019D7D91C370C6F00A3A81B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +148,8 @@
 				90A904BB1C370A7B007C2B7D /* DinnerPartyTrackerTests */,
 				90A904C61C370A7B007C2B7D /* DinnerPartyTrackerUITests */,
 				90A904A01C370A7B007C2B7D /* Products */,
+				24919D06CA54FD8A1A867014 /* Pods */,
+				4B910693FF1FE1B779D36E89 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,9 +221,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90A904CC1C370A7B007C2B7D /* Build configuration list for PBXNativeTarget "DinnerPartyTracker" */;
 			buildPhases = (
+				56EC704F39BB91A6184E89C0 /* Check Pods Manifest.lock */,
 				90A9049B1C370A7B007C2B7D /* Sources */,
 				90A9049C1C370A7B007C2B7D /* Frameworks */,
 				90A9049D1C370A7B007C2B7D /* Resources */,
+				56EE4AED94FC8C6946319BE1 /* Embed Pods Frameworks */,
+				566B6DF68ADB63A332918A15 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,6 +344,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		566B6DF68ADB63A332918A15 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DinnerPartyTracker/Pods-DinnerPartyTracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56EC704F39BB91A6184E89C0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		56EE4AED94FC8C6946319BE1 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DinnerPartyTracker/Pods-DinnerPartyTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		90A9049B1C370A7B007C2B7D /* Sources */ = {
@@ -469,6 +544,7 @@
 		};
 		90A904CD1C370A7B007C2B7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3ACD63BD6C772A36DC44F8B1 /* Pods-DinnerPartyTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DinnerPartyTracker/Info.plist;
@@ -481,6 +557,7 @@
 		};
 		90A904CE1C370A7B007C2B7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FC5A7E6CA8E31AC958B234C /* Pods-DinnerPartyTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DinnerPartyTracker/Info.plist;
