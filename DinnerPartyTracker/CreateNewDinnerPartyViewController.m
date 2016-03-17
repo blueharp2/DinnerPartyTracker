@@ -7,6 +7,10 @@
 //
 
 #import "CreateNewDinnerPartyViewController.h"
+#import <Firebase/Firebase.h>
+#import "MenuItems.h"
+#import "DinnerParty.h"
+
 
 @interface CreateNewDinnerPartyViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
@@ -22,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.addMenuItemButton.layer.cornerRadius = 4;
-    //[self setupMainViewController];
+   // [self setupMainViewController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +44,17 @@
 
 #pragma mark - UITableView Protocol Functions
 
+-(UITableViewCell *)tableview:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [self.menuItemsTableVIew dequeueReusableCellWithIdentifier:@"menuItemCell" forIndexPath:indexPath];
+    
 
+    
+    return cell;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
 
 
 @end
