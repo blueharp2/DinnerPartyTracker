@@ -7,6 +7,7 @@
 //
 
 #import "CreateNewDinnerPartyViewController.h"
+#import "FireBaseService.h"
 #import <Firebase/Firebase.h>
 #import "MenuItems.h"
 #import "DinnerParty.h"
@@ -26,6 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.addMenuItemButton.layer.cornerRadius = 4;
+    [FireBaseService saveToFireBase:@"Testing 1,2,3"];
+    
    // [self setupMainViewController];
 }
 

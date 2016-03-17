@@ -7,6 +7,7 @@
 //
 
 #import "CreateNewDinnerPartyDetailViewController.h"
+#import <Firebase/Firebase.h>
 
 @interface CreateNewDinnerPartyDetailViewController () <UITextFieldDelegate>
 

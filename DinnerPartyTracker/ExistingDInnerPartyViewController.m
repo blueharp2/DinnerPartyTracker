@@ -7,6 +7,7 @@
 //
 
 #import "ExistingDInnerPartyViewController.h"
+#import <Firebase/Firebase.h>
 
 @interface ExistingDInnerPartyViewController ()
 
