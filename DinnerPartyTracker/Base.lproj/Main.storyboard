@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -246,7 +247,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r17-jq-j85">
-                                <rect key="frame" x="275" y="155" width="50" height="33"/>
+                                <rect key="frame" x="275" y="195" width="50" height="33"/>
                                 <color key="backgroundColor" red="0.0" green="0.50990351040000004" blue="0.1074766387" alpha="0.75675675679999999" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="uMh-Hi-P2B"/>
@@ -259,6 +260,11 @@
                                     <action selector="saveMenuItemButtonPressed:" destination="Gpc-Z4-crU" eventType="touchUpInside" id="oMz-j1-yxj"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spo-t7-LTj">
+                                <rect key="frame" x="20" y="155" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -266,12 +272,18 @@
                             <constraint firstAttribute="trailing" secondItem="KWj-ev-hYQ" secondAttribute="trailing" id="6YC-VV-PNQ"/>
                             <constraint firstAttribute="trailing" secondItem="Tmk-Rk-iQA" secondAttribute="trailing" constant="20" id="8eZ-Jc-7Fr"/>
                             <constraint firstItem="hpo-Hm-UM3" firstAttribute="top" secondItem="q2Z-0l-vyW" secondAttribute="bottom" constant="10" id="GKM-pV-4ec"/>
+                            <constraint firstItem="Spo-t7-LTj" firstAttribute="top" secondItem="Tmk-Rk-iQA" secondAttribute="bottom" constant="10" id="M4w-zg-0r8"/>
                             <constraint firstItem="KWj-ev-hYQ" firstAttribute="top" secondItem="WZk-We-3bJ" secondAttribute="top" id="MvX-VC-kBd"/>
                             <constraint firstAttribute="trailing" secondItem="hpo-Hm-UM3" secondAttribute="trailing" constant="20" id="XcX-JM-Wny"/>
                             <constraint firstItem="Tmk-Rk-iQA" firstAttribute="leading" secondItem="WZk-We-3bJ" secondAttribute="leading" constant="20" id="YrZ-F8-bZR"/>
+                            <constraint firstAttribute="trailing" secondItem="Spo-t7-LTj" secondAttribute="trailing" constant="20" id="ZGt-vA-5H7"/>
                             <constraint firstItem="r17-jq-j85" firstAttribute="top" secondItem="Tmk-Rk-iQA" secondAttribute="bottom" constant="10" id="ZuW-CX-K2z"/>
+                            <constraint firstItem="Spo-t7-LTj" firstAttribute="leading" secondItem="WZk-We-3bJ" secondAttribute="leadingMargin" constant="20" id="d1R-lp-4nJ"/>
+                            <constraint firstItem="Spo-t7-LTj" firstAttribute="leading" secondItem="WZk-We-3bJ" secondAttribute="leading" constant="20" id="fkt-7a-5Yq"/>
                             <constraint firstItem="Tmk-Rk-iQA" firstAttribute="top" secondItem="hpo-Hm-UM3" secondAttribute="bottom" constant="10" id="ghl-mq-uSq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Spo-t7-LTj" secondAttribute="trailing" constant="20" id="lId-Ae-2XA"/>
                             <constraint firstItem="hpo-Hm-UM3" firstAttribute="leading" secondItem="WZk-We-3bJ" secondAttribute="leading" constant="20" id="mXe-sy-3ZM"/>
+                            <constraint firstItem="r17-jq-j85" firstAttribute="top" secondItem="Spo-t7-LTj" secondAttribute="bottom" constant="10" id="q7n-Gj-VsY"/>
                             <constraint firstAttribute="bottom" secondItem="KWj-ev-hYQ" secondAttribute="bottom" id="tB9-is-yhS"/>
                             <constraint firstItem="hpo-Hm-UM3" firstAttribute="top" secondItem="WZk-We-3bJ" secondAttribute="top" constant="75" id="uPa-OG-hmK"/>
                             <constraint firstItem="KWj-ev-hYQ" firstAttribute="leading" secondItem="WZk-We-3bJ" secondAttribute="leading" id="yWg-KH-8Y0"/>
@@ -279,6 +291,9 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="GKM-pV-4ec"/>
+                                <exclude reference="d1R-lp-4nJ"/>
+                                <exclude reference="lId-Ae-2XA"/>
+                                <exclude reference="ZuW-CX-K2z"/>
                             </mask>
                         </variation>
                     </view>
