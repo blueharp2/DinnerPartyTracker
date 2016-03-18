@@ -28,6 +28,7 @@
     [super viewDidLoad];
     self.addMenuItemButton.layer.cornerRadius = 4;
     [FireBaseService saveToFireBase:@"Testing 1,2,3"];
+    [FireBaseService readFromFirebase];
     
    // [self setupMainViewController];
 }

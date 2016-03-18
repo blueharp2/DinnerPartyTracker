@@ -16,37 +16,19 @@
 
 +(void)saveToFireBase: (NSString *)test{
     Firebase *myRootURL = [[Firebase alloc] initWithUrl: @"https://dinnerpartytracker.firebaseio.com"];
-    NSLog(test);
+
     [myRootURL setValue:test];
 }
 
 
++(void)readFromFirebase{
+    Firebase *myRootURL = [[Firebase alloc] initWithUrl: @"https://dinnerpartytracker.firebaseio.com"];
+    
+[myRootURL observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+    NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
+}];
 
-
-//Code below has no error messages...but I don't think that's what I want.
-//Firebase *myRootURL = nil;
-//
-//+(void)initialize{
-//    if (!myRootURL) {
-//        myRootURL = [[Firebase alloc] initWithUrl: @"https://dinnerpartytracker.firebaseio.com"];
-//    }
-//}
-//
-//-(id)init {
-//    self = [super init];
-//    if (self) {
-//        [myRootURL setValue:@"Do you have data?"];
-//    }
-//    return self;
-//}
-
-
-//Firebase *myRootURL = [[Firebase alloc] initWithUrl: @"https://dinnerpartytracker.firebaseio.com"];
-//
-//// Create a reference to a Firebase database URL (Example from Firebase)
-//Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://<YOUR-FIREBASE-APP>.firebaseio.com"];
-//// Write data to Firebase
-//[myRootRef setValue:@"Do you have data? You'll love Firebase."];
+}
 
 
 

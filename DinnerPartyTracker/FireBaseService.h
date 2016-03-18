@@ -15,6 +15,7 @@
 //extern const NSString *MY_ROOT_URL;
 
 +(void)saveToFireBase: (NSString *)test;
++(void)readFromFirebase;
 
 
 @end
