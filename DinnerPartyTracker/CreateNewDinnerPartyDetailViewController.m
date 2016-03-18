@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *menuItemTextField;
 @property (weak, nonatomic) IBOutlet UITextField *cookbookTextField;
+@property (weak, nonatomic) IBOutlet UITextField *urlTextFiled;
+
 @property (weak, nonatomic) IBOutlet UIButton *saveMenuItemButton;
 - (IBAction)saveMenuItemButtonPressed:(UIButton *)sender;
 
@@ -34,6 +36,7 @@
 -(void)setupDetailViewController{
     [self.menuItemTextField setDelegate:self];
     [self.cookbookTextField setDelegate:self];
+    [self.urlTextFiled setDelegate:self];
     self.saveMenuItemButton.layer.cornerRadius = 4;
     
 }
@@ -41,6 +44,7 @@
 - (IBAction)saveMenuItemButtonPressed:(UIButton *)sender {
     [self.menuItemTextField resignFirstResponder];
     [self.cookbookTextField resignFirstResponder];
+    [self.urlTextFiled resignFirstResponder];
     
     
 }

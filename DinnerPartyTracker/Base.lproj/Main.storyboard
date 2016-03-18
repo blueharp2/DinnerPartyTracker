@@ -246,6 +246,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spo-t7-LTj">
+                                <rect key="frame" x="20" y="155" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r17-jq-j85">
                                 <rect key="frame" x="275" y="195" width="50" height="33"/>
                                 <color key="backgroundColor" red="0.0" green="0.50990351040000004" blue="0.1074766387" alpha="0.75675675679999999" colorSpace="calibratedRGB"/>
@@ -260,11 +265,6 @@
                                     <action selector="saveMenuItemButtonPressed:" destination="Gpc-Z4-crU" eventType="touchUpInside" id="oMz-j1-yxj"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Spo-t7-LTj">
-                                <rect key="frame" x="20" y="155" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -301,6 +301,7 @@
                         <outlet property="cookbookTextField" destination="Tmk-Rk-iQA" id="XSy-Xi-8Ip"/>
                         <outlet property="menuItemTextField" destination="hpo-Hm-UM3" id="UO0-vR-RYt"/>
                         <outlet property="saveMenuItemButton" destination="r17-jq-j85" id="f1m-Iu-ETI"/>
+                        <outlet property="urlTextFiled" destination="Spo-t7-LTj" id="g8d-K6-GQ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqI-jm-Dpp" userLabel="First Responder" sceneMemberID="firstResponder"/>

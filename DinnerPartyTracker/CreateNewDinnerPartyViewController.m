@@ -32,6 +32,17 @@
     
    // [self setupMainViewController];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    if (self.dateOfDinnerPartyTextField != nil) {
+        self.dateOfDinnerPartyTextField.text = self.dinnerParty.dateOfDinnerParty;
+    }
+    
+    if (self.guestsNamesTextField != nil) {
+        self.guestsNamesTextField.text = self.dinnerParty.guestsNames;
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -45,6 +56,11 @@
     self.menuItemsTableVIew.dataSource = self;
     self.addMenuItemButton.layer.cornerRadius = 4;
 }
+
+
+
+
+
 
 #pragma mark - UITableView Protocol Functions
 
