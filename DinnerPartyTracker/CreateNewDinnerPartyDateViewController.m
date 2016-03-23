@@ -7,6 +7,7 @@
 //
 
 #import "CreateNewDinnerPartyDateViewController.h"
+#import "CreateNewDinnerPartyViewController.h"
 
 @interface CreateNewDinnerPartyDateViewController ()
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
@@ -28,8 +29,18 @@
 #pragma mark - Date View Controller and Date Picker
 
 -(void)setupDateViewController{
-    [self.navigationItem setTitle:@"Select Date"];
+//    [[UINavigationBar appearance] setTitleTextAttributes:@{
+//            NSFontAttributeName: [UIFont fontWithName:@"Futura" size:16.0f]
+//                                                           }];
+   // [self.navigationItem setTitle:@"Select Date"];
+    
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonSelected)]];
 }
+
+//-(void)doneButtonSelected:(UIBarButtonItem *)sender{
+//    NSDate *dateOfDinnerParty = [self.datePicker date];
+//    CreateNewDinnerPartyViewController *createNewDinnerPartyViewController = [[CreateNewDinnerPartyViewController alloc]init];
+//
+//}
 
 @end
