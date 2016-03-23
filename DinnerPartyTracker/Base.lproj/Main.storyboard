@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="n7F-FP-5fY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TuL-Zo-GkD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -112,11 +112,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Prep.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bEg-sa-ujN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Prep.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bEg-sa-ujN">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eYU-a1-Ctd">
-                                <rect key="frame" x="20" y="80" width="560" height="216"/>
+                                <rect key="frame" x="20" y="74" width="560" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="480459656.15154803">
                                     <!--2016-03-23 21:00:56 +0000-->
                                 </date>
@@ -124,7 +124,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eYU-a1-Ctd" firstAttribute="top" secondItem="wKD-GN-qsh" secondAttribute="bottom" constant="60" id="L9L-lJ-14B"/>
+                            <constraint firstItem="eYU-a1-Ctd" firstAttribute="top" secondItem="wKD-GN-qsh" secondAttribute="bottom" constant="10" id="L9L-lJ-14B"/>
                             <constraint firstAttribute="trailing" secondItem="eYU-a1-Ctd" secondAttribute="trailing" constant="20" id="cwW-JF-Hk0"/>
                             <constraint firstItem="eYU-a1-Ctd" firstAttribute="leading" secondItem="xJ9-QU-gng" secondAttribute="leading" constant="20" id="vgn-Ss-oyb"/>
                         </constraints>
@@ -252,6 +252,7 @@
                         <outlet property="dateOfDinnerPartyTextField" destination="F5I-bd-wF0" id="02L-hu-8Ox"/>
                         <outlet property="guestsNamesTextField" destination="IG1-lk-9Ru" id="Mvt-gM-6Eh"/>
                         <outlet property="menuItemsTableVIew" destination="eyP-Ps-5s1" id="35t-4a-ns0"/>
+                        <segue destination="n7F-FP-5fY" kind="show" identifier="dinnerPartyDateSegue" id="Ap2-Lz-rs2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKf-S8-Ouc" userLabel="First Responder" sceneMemberID="firstResponder"/>

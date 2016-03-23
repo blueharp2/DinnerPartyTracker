@@ -26,14 +26,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //Delete these when setupMainViewController is done
     self.addMenuItemButton.layer.cornerRadius = 4;
+    [self.dateOfDinnerPartyTextField setDelegate:self];
+   
+    // [self setupMainViewController];
+    
     [FireBaseService saveToFireBase:@"Testing 1,2,3"];
     [FireBaseService readFromFirebase];
+   
     
-   // [self setupMainViewController];
+    
+
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
     
     if (self.dateOfDinnerPartyTextField != nil) {
         self.dateOfDinnerPartyTextField.text = self.dinnerParty.dateOfDinnerParty;
@@ -42,6 +51,7 @@
     if (self.guestsNamesTextField != nil) {
         self.guestsNamesTextField.text = self.dinnerParty.guestsNames;
     }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,10 +67,11 @@
     self.addMenuItemButton.layer.cornerRadius = 4;
 }
 
+#pragma mark - UITextField
 
-
-
-
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    [self performSegueWithIdentifier:@"dinnerPartyDateSegue" sender:self];
+}
 
 #pragma mark - UITableView Protocol Functions
 

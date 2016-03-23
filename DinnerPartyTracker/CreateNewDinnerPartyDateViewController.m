@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self setupDateViewController];
+    [self setupDateViewController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,9 +27,9 @@
 
 #pragma mark - Date View Controller and Date Picker
 
-//-(void)setupDateViewController{
-//    [self.navigationItem setTitle:@"Select Date"];
-//    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonSelected)]];
-//}
+-(void)setupDateViewController{
+    [self.navigationItem setTitle:@"Select Date"];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonSelected)]];
+}
 
 @end
