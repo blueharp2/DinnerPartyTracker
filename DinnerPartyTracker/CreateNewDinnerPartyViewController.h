@@ -13,6 +13,6 @@
 @interface CreateNewDinnerPartyViewController : UIViewController
 
 @property (strong, nonatomic)DinnerParty *dinnerParty;
-@property (strong, nonatomic)DinnerParty *dateOfDinnerParty;
+@property (strong, nonatomic)NSDate *dateOfDinnerParty;
 
 @end

@@ -44,8 +44,12 @@
     [super viewWillAppear:animated];
     
     
-    if (self.dateOfDinnerPartyTextField != nil) {
-        self.dateOfDinnerPartyTextField.text = self.dinnerParty.dateOfDinnerParty;
+    if (self.dateOfDinnerParty != nil) {
+        
+        NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
+        [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+        self.dateOfDinnerPartyTextField.text = [dateFormatter stringFromDate: self.dateOfDinnerParty];
+        NSLog(@"@%@", self.dateOfDinnerParty);
     }
     
     if (self.guestsNamesTextField != nil) {
@@ -77,8 +81,6 @@
 
 -(UITableViewCell *)tableview:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [self.menuItemsTableVIew dequeueReusableCellWithIdentifier:@"menuItemCell" forIndexPath:indexPath];
-    
-
     
     return cell;
 }

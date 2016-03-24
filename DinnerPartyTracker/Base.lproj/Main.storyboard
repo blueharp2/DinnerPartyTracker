@@ -147,11 +147,12 @@
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="eYU-a1-Ctd" id="ZST-27-O77"/>
+                        <segue destination="gDl-LS-mOu" kind="show" identifier="backToCreateVCSegue" id="CfW-iv-SXe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="poR-dR-v8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1798" y="-385"/>
+            <point key="canvasLocation" x="2510" y="-399"/>
         </scene>
         <!--Create New Dinner Party View Controller-->
         <scene sceneID="PGG-sL-vHe">
@@ -386,4 +387,7 @@
         <image name="Prep.jpg" width="1450" height="800"/>
         <image name="lamb.jpeg" width="3264" height="4928"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="CfW-iv-SXe"/>
+    </inferredMetricsTieBreakers>
 </document>
