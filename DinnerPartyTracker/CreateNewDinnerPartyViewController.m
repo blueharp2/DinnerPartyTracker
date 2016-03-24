@@ -45,11 +45,11 @@
     
     
     if (self.dateOfDinnerParty != nil) {
-        
         NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
         [dateFormatter setDateStyle:NSDateFormatterLongStyle];
         self.dateOfDinnerPartyTextField.text = [dateFormatter stringFromDate: self.dateOfDinnerParty];
         NSLog(@"@%@", self.dateOfDinnerParty);
+        self.dinnerParty.dateOfDinnerParty = self.dateOfDinnerParty;
     }
     
     if (self.guestsNamesTextField != nil) {
