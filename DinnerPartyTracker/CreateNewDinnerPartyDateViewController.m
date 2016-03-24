@@ -32,15 +32,18 @@
 //    [[UINavigationBar appearance] setTitleTextAttributes:@{
 //            NSFontAttributeName: [UIFont fontWithName:@"Futura" size:16.0f]
 //                                                           }];
-   // [self.navigationItem setTitle:@"Select Date"];
     
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonSelected)]];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonSelected:)]];
 }
 
-//-(void)doneButtonSelected:(UIBarButtonItem *)sender{
-//    NSDate *dateOfDinnerParty = [self.datePicker date];
-//    CreateNewDinnerPartyViewController *createNewDinnerPartyViewController = [[CreateNewDinnerPartyViewController alloc]init];
-//
-//}
+
+-(void)doneButtonSelected:(UIBarButtonItem *)sender{
+   // self.datePicker.date = [NSDate date];
+    NSDate *dateOfDinnerParty = [self.datePicker date];
+    CreateNewDinnerPartyViewController *createNewDinnerPartyViewController = [[CreateNewDinnerPartyViewController alloc]init];
+    createNewDinnerPartyViewController.dateOfDinnerParty = dateOfDinnerParty;
+    NSLog(@"done button selected");
+    
+}
 
 @end

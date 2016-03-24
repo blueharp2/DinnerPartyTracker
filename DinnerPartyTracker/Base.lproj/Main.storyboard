@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TuL-Zo-GkD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TuL-Zo-GkD">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -112,21 +112,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Prep.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bEg-sa-ujN">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Prep.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bEg-sa-ujN">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="eYU-a1-Ctd">
-                                <rect key="frame" x="20" y="74" width="560" height="216"/>
+                                <rect key="frame" x="25" y="94" width="550" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="480459656.15154803">
                                     <!--2016-03-23 21:00:56 +0000-->
                                 </date>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J00-mx-JX9">
+                                <rect key="frame" x="248" y="72" width="104" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="7Fk-ol-y6F"/>
+                                    <constraint firstAttribute="width" constant="104" id="FXQ-ic-aaJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eYU-a1-Ctd" firstAttribute="top" secondItem="wKD-GN-qsh" secondAttribute="bottom" constant="10" id="L9L-lJ-14B"/>
-                            <constraint firstAttribute="trailing" secondItem="eYU-a1-Ctd" secondAttribute="trailing" constant="20" id="cwW-JF-Hk0"/>
-                            <constraint firstItem="eYU-a1-Ctd" firstAttribute="leading" secondItem="xJ9-QU-gng" secondAttribute="leading" constant="20" id="vgn-Ss-oyb"/>
+                            <constraint firstAttribute="trailing" secondItem="bEg-sa-ujN" secondAttribute="trailing" id="I3r-1q-lZP"/>
+                            <constraint firstItem="eYU-a1-Ctd" firstAttribute="top" secondItem="wKD-GN-qsh" secondAttribute="bottom" constant="30" id="L9L-lJ-14B"/>
+                            <constraint firstItem="J00-mx-JX9" firstAttribute="top" secondItem="wKD-GN-qsh" secondAttribute="bottom" constant="8" id="SSt-ff-3V1"/>
+                            <constraint firstItem="bEg-sa-ujN" firstAttribute="leading" secondItem="xJ9-QU-gng" secondAttribute="leading" id="XNR-In-aJN"/>
+                            <constraint firstItem="J00-mx-JX9" firstAttribute="centerX" secondItem="xJ9-QU-gng" secondAttribute="centerX" id="YEv-ft-gI9"/>
+                            <constraint firstItem="bEg-sa-ujN" firstAttribute="top" secondItem="xJ9-QU-gng" secondAttribute="top" id="ZKy-XS-2Sj"/>
+                            <constraint firstAttribute="trailing" secondItem="eYU-a1-Ctd" secondAttribute="trailing" constant="25" id="cwW-JF-Hk0"/>
+                            <constraint firstItem="r9A-c5-4ee" firstAttribute="top" secondItem="bEg-sa-ujN" secondAttribute="bottom" id="tgy-rT-5pY"/>
+                            <constraint firstItem="eYU-a1-Ctd" firstAttribute="leading" secondItem="xJ9-QU-gng" secondAttribute="leading" constant="25" id="vgn-Ss-oyb"/>
                         </constraints>
                     </view>
                     <connections>
