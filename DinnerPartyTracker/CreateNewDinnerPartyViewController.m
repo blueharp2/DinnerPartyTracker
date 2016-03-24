@@ -30,6 +30,7 @@
     //Delete these when setupMainViewController is done
     self.addMenuItemButton.layer.cornerRadius = 4;
     [self.dateOfDinnerPartyTextField setDelegate:self];
+    [self.guestsNamesTextField setDelegate:self];
    
     // [self setupMainViewController];
     
@@ -48,6 +49,7 @@
         NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
         [dateFormatter setDateStyle:NSDateFormatterLongStyle];
         self.dateOfDinnerPartyTextField.text = [dateFormatter stringFromDate: self.dateOfDinnerParty];
+        [self.dateOfDinnerPartyTextField endEditing:YES];
         NSLog(@"@%@", self.dateOfDinnerParty);
         self.dinnerParty.dateOfDinnerParty = self.dateOfDinnerParty;
     }
@@ -74,8 +76,15 @@
 #pragma mark - UITextField
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-    [self performSegueWithIdentifier:@"dinnerPartyDateSegue" sender:self];
+    if (textField == self.dateOfDinnerPartyTextField) {
+        [self performSegueWithIdentifier:@"dinnerPartyDateSegue" sender:self];
+    }
+    
 }
+
+//-(void)textFieldDidBeginEditing:(UITextField *)textField{
+//    [self performSegueWithIdentifier:@"dinnerPartyDateSegue" sender:self];
+//}
 
 #pragma mark - UITableView Protocol Functions
 
