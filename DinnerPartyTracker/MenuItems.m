@@ -14,11 +14,13 @@
 @dynamic cookboookName;
 
 -(id)initWithMenuItemName:(NSString *)menuItemName
-             cookbookName:(NSString *)cookbookName{
+             cookbookName:(NSString *)cookbookName
+                      url:(NSURL *)url{
     
     if ((self = [super init])) {
         self.menuItemName = menuItemName;
         self.cookboookName = cookbookName;
+        self.url = url;
     }
     return self;
 }

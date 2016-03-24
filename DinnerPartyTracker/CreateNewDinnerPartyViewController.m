@@ -7,6 +7,11 @@
 //
 
 #import "CreateNewDinnerPartyViewController.h"
+#import "FireBaseService.h"
+#import <Firebase/Firebase.h>
+#import "MenuItems.h"
+#import "DinnerParty.h"
+
 
 @interface CreateNewDinnerPartyViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
@@ -21,8 +26,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //Delete these when setupMainViewController is done
     self.addMenuItemButton.layer.cornerRadius = 4;
-    //[self setupMainViewController];
+    [self.dateOfDinnerPartyTextField setDelegate:self];
+   
+    // [self setupMainViewController];
+    
+    [FireBaseService saveToFireBase:@"Testing 1,2,3"];
+    [FireBaseService readFromFirebase];
+   
+    
+    
+
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    
+    if (self.dateOfDinnerParty != nil) {
+        NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
+        [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+        self.dateOfDinnerPartyTextField.text = [dateFormatter stringFromDate: self.dateOfDinnerParty];
+        NSLog(@"@%@", self.dateOfDinnerParty);
+        self.dinnerParty.dateOfDinnerParty = self.dateOfDinnerParty;
+    }
+    
+    if (self.guestsNamesTextField != nil) {
+        self.guestsNamesTextField.text = self.dinnerParty.guestsNames;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +71,23 @@
     self.addMenuItemButton.layer.cornerRadius = 4;
 }
 
+#pragma mark - UITextField
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    [self performSegueWithIdentifier:@"dinnerPartyDateSegue" sender:self];
+}
+
+#pragma mark - UITableView Protocol Functions
+
+-(UITableViewCell *)tableview:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [self.menuItemsTableVIew dequeueReusableCellWithIdentifier:@"menuItemCell" forIndexPath:indexPath];
+    
+    return cell;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
 
 
 @end

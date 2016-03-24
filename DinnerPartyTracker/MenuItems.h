@@ -12,8 +12,10 @@
 
 @property(copy, nonatomic) NSString *menuItemName;
 @property(copy, nonatomic) NSString *cookboookName;
+@property(copy, nonatomic) NSURL *url;
 
 -(id)initWithMenuItemName:(NSString *)menuItemName
-             cookbookName:(NSString *)cookbookName;
+             cookbookName:(NSString *)cookbookName
+                      url:(NSURL *)url;
 
 @end
