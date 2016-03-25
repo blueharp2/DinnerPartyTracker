@@ -51,12 +51,10 @@
         self.dateOfDinnerPartyTextField.text = [dateFormatter stringFromDate: self.dateOfDinnerParty];
         [self.dateOfDinnerPartyTextField endEditing:YES];
         NSLog(@"@%@", self.dateOfDinnerParty);
-        self.dinnerParty.dateOfDinnerParty = self.dateOfDinnerParty;
+        //self.dinnerParty.dateOfDinnerParty = self.dateOfDinnerParty;
     }
     
-    if (self.guestsNamesTextField != nil) {
-        self.guestsNamesTextField.text = self.dinnerParty.guestsNames;
-    }
+
     
 }
 
@@ -79,12 +77,24 @@
     if (textField == self.dateOfDinnerPartyTextField) {
         [self performSegueWithIdentifier:@"dinnerPartyDateSegue" sender:self];
     }
-    
 }
 
 //-(void)textFieldDidBeginEditing:(UITextField *)textField{
 //    [self performSegueWithIdentifier:@"dinnerPartyDateSegue" sender:self];
 //}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if (self.guestsNamesTextField != nil) {
+        self.guestsNames = self.guestsNamesTextField.text;
+    
+        
+       [self.guestsNamesTextField resignFirstResponder];
+        [self.guestsNamesTextField endEditing:YES];
+        //self.guestsNames = self.dinnerParty.guestsNames;
+        
+    }
+    return YES;
+}
 
 #pragma mark - UITableView Protocol Functions
 
