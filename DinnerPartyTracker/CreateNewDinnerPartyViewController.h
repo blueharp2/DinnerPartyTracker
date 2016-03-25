@@ -15,6 +15,6 @@
 @property (strong, nonatomic)DinnerParty *dinnerParty;
 @property (strong, nonatomic)NSDate *dateOfDinnerParty;
 @property (strong, nonatomic)NSString *guestsNames;
-@property (weak, nonatomic) IBOutlet UITextField *dateOfDinnerPartyTextField;
+
 
 @end

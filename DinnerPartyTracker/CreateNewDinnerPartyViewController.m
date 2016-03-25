@@ -15,7 +15,7 @@
 
 @interface CreateNewDinnerPartyViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
-//@property (weak, nonatomic) IBOutlet UITextField *dateOfDinnerPartyTextField;
+@property (weak, nonatomic) IBOutlet UITextField *dateOfDinnerPartyTextField;
 @property (weak, nonatomic) IBOutlet UITextField *guestsNamesTextField;
 @property (weak, nonatomic) IBOutlet UITableView *menuItemsTableVIew;
 @property (weak, nonatomic) IBOutlet UIButton *addMenuItemButton;
@@ -56,12 +56,6 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    if (self.dateOfDinnerParty == nil) {
-        [self.dateOfDinnerPartyTextField endEditing:YES];
-    }
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -78,10 +72,20 @@
 #pragma mark - UITextField
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
+    if(self.dateOfDinnerParty == nil){
+        [self.dateOfDinnerPartyTextField endEditing:YES];
+        [self.dateOfDinnerPartyTextField resignFirstResponder];
+    }
     if (textField == self.dateOfDinnerPartyTextField) {
         [self performSegueWithIdentifier:@"dinnerPartyDateSegue" sender:self];
     }
 }
+
+//-(void)textFieldDidBeginEditing:(UITextField *)textField{
+//    if (textField == self.dateOfDinnerPartyTextField) {
+//        [self performSegueWithIdentifier:@"dinnerPartyDateSegue" sender:self];
+//    }
+//}
 
 //-(void)textFieldDidBeginEditing:(UITextField *)textField{
 //    [self performSegueWithIdentifier:@"dinnerPartyDateSegue" sender:self];
@@ -90,8 +94,7 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     if (self.guestsNamesTextField != nil) {
         self.guestsNames = self.guestsNamesTextField.text;
-    
-        
+
        [self.guestsNamesTextField resignFirstResponder];
         [self.guestsNamesTextField endEditing:YES];
         //self.guestsNames = self.dinnerParty.guestsNames;
