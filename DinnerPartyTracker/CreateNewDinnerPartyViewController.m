@@ -58,7 +58,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 -(void)setupMainViewController{
@@ -87,15 +87,12 @@
 //    }
 //}
 
-//-(void)textFieldDidBeginEditing:(UITextField *)textField{
-//    [self performSegueWithIdentifier:@"dinnerPartyDateSegue" sender:self];
-//}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     if (self.guestsNamesTextField != nil) {
         self.guestsNames = self.guestsNamesTextField.text;
 
-       [self.guestsNamesTextField resignFirstResponder];
+        [self.guestsNamesTextField resignFirstResponder];
         [self.guestsNamesTextField endEditing:YES];
         //self.guestsNames = self.dinnerParty.guestsNames;
         
