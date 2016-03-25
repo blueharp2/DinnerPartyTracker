@@ -23,8 +23,25 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
+//Trying to fix back button bug
+
+-(void)viewWillDisappear:(BOOL)animated{
+    if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
+        CreateNewDinnerPartyViewController *createNewDinnerPartyViewController = [[CreateNewDinnerPartyViewController alloc]init];
+        [createNewDinnerPartyViewController.dateOfDinnerPartyTextField endEditing:YES];
+    }
+    [super viewWillDisappear:animated];
+}
+
+
+//-(void)didMoveToParentViewController:(UIViewController *)parent{
+//    if (parent == NULL) {
+//        CreateNewDinnerPartyViewController *createNewDinnerPartyViewController = [[CreateNewDinnerPartyViewController alloc]init];
+//        [createNewDinnerPartyViewController.dateOfDinnerPartyTextField endEditing:YES];
+//    }
+//}
 
 #pragma mark - Date View Controller and Date Picker
 
@@ -32,10 +49,8 @@
 //    [[UINavigationBar appearance] setTitleTextAttributes:@{
 //            NSFontAttributeName: [UIFont fontWithName:@"Futura" size:16.0f]
 //                                                           }];
-    
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonSelected:)]];
 }
-
 
 -(void)doneButtonSelected:(UIBarButtonItem *)sender{
    

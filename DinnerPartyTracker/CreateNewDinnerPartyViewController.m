@@ -15,7 +15,7 @@
 
 @interface CreateNewDinnerPartyViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *dateOfDinnerPartyTextField;
+//@property (weak, nonatomic) IBOutlet UITextField *dateOfDinnerPartyTextField;
 @property (weak, nonatomic) IBOutlet UITextField *guestsNamesTextField;
 @property (weak, nonatomic) IBOutlet UITableView *menuItemsTableVIew;
 @property (weak, nonatomic) IBOutlet UIButton *addMenuItemButton;
@@ -54,8 +54,12 @@
         //self.dinnerParty.dateOfDinnerParty = self.dateOfDinnerParty;
     }
     
+}
 
-    
+-(void)viewDidAppear:(BOOL)animated{
+    if (self.dateOfDinnerParty == nil) {
+        [self.dateOfDinnerPartyTextField endEditing:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
