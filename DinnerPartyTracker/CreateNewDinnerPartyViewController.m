@@ -10,7 +10,7 @@
 #import "FireBaseService.h"
 #import <Firebase/Firebase.h>
 #import "MenuItems.h"
-#import "DinnerParty.h"
+
 
 
 @interface CreateNewDinnerPartyViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
@@ -37,8 +37,6 @@
     [FireBaseService saveToFireBase:@"Testing 1,2,3"];
     [FireBaseService readFromFirebase];
    
-    
-    
 
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -51,7 +49,8 @@
         self.dateOfDinnerPartyTextField.text = [dateFormatter stringFromDate: self.dateOfDinnerParty];
         [self.dateOfDinnerPartyTextField endEditing:YES];
         NSLog(@"@%@", self.dateOfDinnerParty);
-        //self.dinnerParty.dateOfDinnerParty = self.dateOfDinnerParty;
+        
+       // self.dateOfDinnerParty = self.dinnerParty.dateOfDinnerParty;
     }
     
 }
@@ -95,6 +94,7 @@
         [self.guestsNamesTextField resignFirstResponder];
         [self.guestsNamesTextField endEditing:YES];
         //self.guestsNames = self.dinnerParty.guestsNames;
+        
         
     }
     return YES;
