@@ -38,7 +38,7 @@
 -(void)doneButtonSelected:(UIBarButtonItem *)sender{
    
     NSDate *dateOfDinnerParty = [self.datePicker date];
-    CreateNewDinnerPartyViewController *createNewDinnerPartyViewController = [[CreateNewDinnerPartyViewController alloc]init];
+    CreateNewDinnerPartyViewController *createNewDinnerPartyViewController; /*= [[CreateNewDinnerPartyViewController alloc]init];*/
     createNewDinnerPartyViewController.dateOfDinnerParty = dateOfDinnerParty;
     NSLog(@"done button selected");
     
