@@ -48,7 +48,11 @@
     [self.cookbookTextField resignFirstResponder];
     [self.urlTextFiled resignFirstResponder];
     
-  //  self.createNewDinnerPartyDetailDelegate didSaveMenuItems:<#(NSString *)#> cookBook:<#(NSString *)#> url:<#(NSURL *)#>
+    NSString *menuItem = self.menuItemTextField.text;
+    NSString *cookBook = self.cookbookTextField.text;
+    NSString *url = self.urlTextFiled.text;
+    
+    [self.createNewDinnerPartyDetailDelegate didSaveMenuItems:menuItem cookBook:cookBook url:url];
     [self.navigationController popViewControllerAnimated:YES];
     
     

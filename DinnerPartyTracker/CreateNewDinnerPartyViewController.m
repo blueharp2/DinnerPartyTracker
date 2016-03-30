@@ -59,7 +59,7 @@
     self.addMenuItemButton.layer.cornerRadius = 4;
 }
 
-#pragma mark - Segues
+#pragma mark - Segues & VC Delegates
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"dinnerPartyDateSegue"]) {
@@ -75,6 +75,22 @@
         }
     }
 }
+
+-(void)didFinishSelectingDate:(NSDate *)dateOfDinnerParty{
+    if (dateOfDinnerParty != nil) {
+        NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
+        [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+        self.dateOfDinnerPartyTextField.text = [dateFormatter stringFromDate: dateOfDinnerParty];
+        [self.dateOfDinnerPartyTextField endEditing:YES];
+        [self.dateOfDinnerPartyTextField resignFirstResponder];
+    }
+}
+
+
+-(void)didSaveMenuItems:(NSString *)menuItem cookBook:(NSString *)cookBookTitle url:(NSURL *)url{
+    
+}
+
 
 #pragma mark - UITextField
 
@@ -97,17 +113,6 @@
         [self.guestsNamesTextField endEditing:YES];
     }
     return YES;
-}
-
-
--(void)didFinishSelectingDate:(NSDate *)dateOfDinnerParty{
-   if (dateOfDinnerParty != nil) {
-            NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
-        [dateFormatter setDateStyle:NSDateFormatterLongStyle];
-        self.dateOfDinnerPartyTextField.text = [dateFormatter stringFromDate: dateOfDinnerParty];
-        [self.dateOfDinnerPartyTextField endEditing:YES];
-        [self.dateOfDinnerPartyTextField resignFirstResponder];
-    }
 }
 
 #pragma mark - UITableView Protocol Functions
