@@ -8,6 +8,8 @@
 
 #import "CreateNewDinnerPartyDetailViewController.h"
 #import <Firebase/Firebase.h>
+#import "CreateNewDinnerPartyViewController.h"
+#import "MenuItems.h"
 
 @interface CreateNewDinnerPartyDetailViewController () <UITextFieldDelegate>
 
@@ -45,6 +47,9 @@
     [self.menuItemTextField resignFirstResponder];
     [self.cookbookTextField resignFirstResponder];
     [self.urlTextFiled resignFirstResponder];
+    
+  //  self.createNewDinnerPartyDetailDelegate didSaveMenuItems:<#(NSString *)#> cookBook:<#(NSString *)#> url:<#(NSURL *)#>
+    [self.navigationController popViewControllerAnimated:YES];
     
     
 }

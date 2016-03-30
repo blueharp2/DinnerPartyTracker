@@ -11,10 +11,11 @@
 #import <Firebase/Firebase.h>
 #import "MenuItems.h"
 #import "CreateNewDinnerPartyDateViewController.h"
+#import "CreateNewDinnerPartyDetailViewController.h"
 
 
 
-@interface CreateNewDinnerPartyViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, CreateNewDinnerPartyDateViewControllerDelegate>
+@interface CreateNewDinnerPartyViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, CreateNewDinnerPartyDateViewControllerDelegate, CreateNewDinnerPartyDetailViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *dateOfDinnerPartyTextField;
 @property (weak, nonatomic) IBOutlet UITextField *guestsNamesTextField;
@@ -58,6 +59,23 @@
     self.addMenuItemButton.layer.cornerRadius = 4;
 }
 
+#pragma mark - Segues
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"dinnerPartyDateSegue"]) {
+        if ([segue.destinationViewController isKindOfClass:[CreateNewDinnerPartyDateViewController class]]) {
+            CreateNewDinnerPartyDateViewController *dateVC = (CreateNewDinnerPartyDateViewController *)segue.destinationViewController;
+            dateVC.createNewDinnerPartyDateDelegate = self;
+        }
+    }
+    if ([segue.identifier isEqualToString:@"segueToCreateDetailVC"]) {
+        if ([segue.destinationViewController isKindOfClass:[CreateNewDinnerPartyDetailViewController class]]) {
+            CreateNewDinnerPartyDetailViewController *detailVC = (CreateNewDinnerPartyDetailViewController *)segue.destinationViewController;
+            detailVC.createNewDinnerPartyDetailDelegate = self;
+        }
+    }
+}
+
 #pragma mark - UITextField
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
@@ -81,22 +99,14 @@
     return YES;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"dinnerPartyDateSegue"]) {
-        if ([segue.destinationViewController isKindOfClass:[CreateNewDinnerPartyDateViewController class]]) {
-            CreateNewDinnerPartyDateViewController *dateVC = (CreateNewDinnerPartyDateViewController *)segue.destinationViewController;
-            dateVC.createNewDinnerPartyDateDelegate = self;
-        }
-    }
-}
 
 -(void)didFinishSelectingDate:(NSDate *)dateOfDinnerParty{
    if (dateOfDinnerParty != nil) {
-        NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
+            NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
         [dateFormatter setDateStyle:NSDateFormatterLongStyle];
         self.dateOfDinnerPartyTextField.text = [dateFormatter stringFromDate: dateOfDinnerParty];
         [self.dateOfDinnerPartyTextField endEditing:YES];
-        NSLog(@"@%@", self.dateOfDinnerParty);
+        [self.dateOfDinnerPartyTextField resignFirstResponder];
     }
 }
 
