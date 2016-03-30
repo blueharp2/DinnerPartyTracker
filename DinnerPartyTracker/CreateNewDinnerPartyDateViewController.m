@@ -41,33 +41,6 @@
     [self.createNewDinnerPartyDateDelegate didFinishSelectingDate: dateOfDinnerParty];
     [self.navigationController popViewControllerAnimated:YES];
     
-    // NSDate *dateOfDinnerParty = [self.datePicker date];
-//    CreateNewDinnerPartyViewController *createNewDinnerPartyViewController = [[CreateNewDinnerPartyViewController alloc]init];
-//    createNewDinnerPartyViewController.dateOfDinnerParty = dateOfDinnerParty;
-//    NSLog(@"done button selected");
-//    
-//    [self.navigationController popToViewController:createNewDinnerPartyViewController animated:YES];
-    
 }
-
-
-//
-//-(void)doneButtonSelected:(UIBarButtonItem *)sender{
-//   
-//    NSDate *dateOfDinnerParty = [self.datePicker date];
-//    CreateNewDinnerPartyViewController *createNewDinnerPartyViewController; /*= [[CreateNewDinnerPartyViewController alloc]init];*/
-//    createNewDinnerPartyViewController.dateOfDinnerParty = dateOfDinnerParty;
-//    NSLog(@"done button selected");
-//    
-//    [self performSegueWithIdentifier:@"backToCreateVCSegue" sender:sender];
-//    
-//}
-//
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    if ([segue.identifier isEqualToString:@"backToCreateVCSegue"]){
-//        CreateNewDinnerPartyViewController *createNewDinnerPartyViewController = (CreateNewDinnerPartyViewController *)segue.destinationViewController;
-//        createNewDinnerPartyViewController.dateOfDinnerParty = self.datePicker.date;
-//    }
-//}
 
 @end
