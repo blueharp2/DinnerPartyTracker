@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CreateNewDinnerPartyViewController.h"
+#import "DinnerParty.h"
+
+@protocol CreateNewDinnerPartyDateViewControllerDelegate <NSObject>
+
+-(void)didFinishSelectingDate:(NSDate *)dateOfDinnerParty;
+
+@end
+
+
 
 @interface CreateNewDinnerPartyDateViewController : UIViewController
+
+@property(nonatomic, assign) id<CreateNewDinnerPartyDateViewControllerDelegate> createNewDinnerPartyDateDelegate;
+
+-(void)doneButtonSelected:(UIBarButtonItem *)sender;
 
 @end

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
 #import "DinnerParty.h"
+#import "CreateNewDinnerPartyDateViewController.h"
 
-@interface CreateNewDinnerPartyViewController : UIViewController
+@interface CreateNewDinnerPartyViewController : UIViewController 
 
 @property (strong, nonatomic)DinnerParty *dinnerParty;
 @property (strong, nonatomic)NSDate *dateOfDinnerParty;

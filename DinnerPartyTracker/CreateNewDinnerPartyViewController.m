@@ -10,10 +10,11 @@
 #import "FireBaseService.h"
 #import <Firebase/Firebase.h>
 #import "MenuItems.h"
+#import "CreateNewDinnerPartyDateViewController.h"
 
 
 
-@interface CreateNewDinnerPartyViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+@interface CreateNewDinnerPartyViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, CreateNewDinnerPartyDateViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *dateOfDinnerPartyTextField;
 @property (weak, nonatomic) IBOutlet UITextField *guestsNamesTextField;
@@ -98,6 +99,27 @@
         
     }
     return YES;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"dinnerPartyDateSegue"]) {
+        if ([segue.destinationViewController isKindOfClass:[CreateNewDinnerPartyDateViewController class]]) {
+            CreateNewDinnerPartyDateViewController *dateVC = (CreateNewDinnerPartyDateViewController *)segue.destinationViewController;
+            dateVC.createNewDinnerPartyDateDelegate = self;
+        }
+    }
+}
+
+-(void)didFinishSelectingDate:(NSDate *)dateOfDinnerParty{
+    if (self.dateOfDinnerParty != nil) {
+        NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
+        [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+        self.dateOfDinnerPartyTextField.text = [dateFormatter stringFromDate: self.dateOfDinnerParty];
+        [self.dateOfDinnerPartyTextField endEditing:YES];
+        NSLog(@"@%@", self.dateOfDinnerParty);
+        
+        // self.dateOfDinnerParty = self.dinnerParty.dateOfDinnerParty;
+    }
 }
 
 #pragma mark - UITableView Protocol Functions

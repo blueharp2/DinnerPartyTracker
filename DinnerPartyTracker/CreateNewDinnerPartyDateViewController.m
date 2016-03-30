@@ -37,15 +37,20 @@
 
 
 -(void)doneButtonSelected:(UIBarButtonItem *)sender{
-    
     NSDate *dateOfDinnerParty = [self.datePicker date];
-    CreateNewDinnerPartyViewController *createNewDinnerPartyViewController = [[CreateNewDinnerPartyViewController alloc]init];
-    createNewDinnerPartyViewController.dateOfDinnerParty = dateOfDinnerParty;
-    NSLog(@"done button selected");
+    [self.createNewDinnerPartyDateDelegate didFinishSelectingDate: dateOfDinnerParty];
+    [self.navigationController popViewControllerAnimated:YES];
     
-    [self.navigationController popToViewController:createNewDinnerPartyViewController animated:YES];
+    // NSDate *dateOfDinnerParty = [self.datePicker date];
+//    CreateNewDinnerPartyViewController *createNewDinnerPartyViewController = [[CreateNewDinnerPartyViewController alloc]init];
+//    createNewDinnerPartyViewController.dateOfDinnerParty = dateOfDinnerParty;
+//    NSLog(@"done button selected");
+//    
+//    [self.navigationController popToViewController:createNewDinnerPartyViewController animated:YES];
     
 }
+
+
 //
 //-(void)doneButtonSelected:(UIBarButtonItem *)sender{
 //   
