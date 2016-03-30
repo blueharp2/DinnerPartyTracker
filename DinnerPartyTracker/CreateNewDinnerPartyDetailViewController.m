@@ -50,7 +50,12 @@
     
     NSString *menuItem = self.menuItemTextField.text;
     NSString *cookBook = self.cookbookTextField.text;
-    NSString *url = self.urlTextFiled.text;
+    
+    NSString *urlBase = @"http://";
+    NSString *urlString = [urlBase stringByAppendingString:self.urlTextFiled.text];
+    NSURL *url = [NSURL URLWithString:urlString];
+    //NSLog(@"%@",url);
+    //Might want to add some extra protection incase someone copies and pastes the url.  In that case the http:// is already there. 
     
     [self.createNewDinnerPartyDetailDelegate didSaveMenuItems:menuItem cookBook:cookBook url:url];
     [self.navigationController popViewControllerAnimated:YES];
