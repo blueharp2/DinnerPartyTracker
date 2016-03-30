@@ -10,10 +10,11 @@
 #import "FireBaseService.h"
 #import <Firebase/Firebase.h>
 #import "MenuItems.h"
-#import "DinnerParty.h"
+#import "CreateNewDinnerPartyDateViewController.h"
 
 
-@interface CreateNewDinnerPartyViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+
+@interface CreateNewDinnerPartyViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, CreateNewDinnerPartyDateViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *dateOfDinnerPartyTextField;
 @property (weak, nonatomic) IBOutlet UITextField *guestsNamesTextField;
@@ -30,37 +31,23 @@
     //Delete these when setupMainViewController is done
     self.addMenuItemButton.layer.cornerRadius = 4;
     [self.dateOfDinnerPartyTextField setDelegate:self];
+    [self.guestsNamesTextField setDelegate:self];
    
     // [self setupMainViewController];
     
     [FireBaseService saveToFireBase:@"Testing 1,2,3"];
     [FireBaseService readFromFirebase];
    
-    
-    
 
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    
-    if (self.dateOfDinnerParty != nil) {
-        NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
-        [dateFormatter setDateStyle:NSDateFormatterLongStyle];
-        self.dateOfDinnerPartyTextField.text = [dateFormatter stringFromDate: self.dateOfDinnerParty];
-        NSLog(@"@%@", self.dateOfDinnerParty);
-        self.dinnerParty.dateOfDinnerParty = self.dateOfDinnerParty;
-    }
-    
-    if (self.guestsNamesTextField != nil) {
-        self.guestsNamesTextField.text = self.dinnerParty.guestsNames;
-    }
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 -(void)setupMainViewController{
@@ -74,7 +61,43 @@
 #pragma mark - UITextField
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-    [self performSegueWithIdentifier:@"dinnerPartyDateSegue" sender:self];
+    if(self.dateOfDinnerParty == nil){
+        [self.dateOfDinnerPartyTextField endEditing:YES];
+        [self.dateOfDinnerPartyTextField resignFirstResponder];
+    }
+    if (textField == self.dateOfDinnerPartyTextField) {
+        [self performSegueWithIdentifier:@"dinnerPartyDateSegue" sender:self];
+    }
+}
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if (self.guestsNamesTextField != nil) {
+        self.guestsNames = self.guestsNamesTextField.text;
+
+        [self.guestsNamesTextField resignFirstResponder];
+        [self.guestsNamesTextField endEditing:YES];
+    }
+    return YES;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"dinnerPartyDateSegue"]) {
+        if ([segue.destinationViewController isKindOfClass:[CreateNewDinnerPartyDateViewController class]]) {
+            CreateNewDinnerPartyDateViewController *dateVC = (CreateNewDinnerPartyDateViewController *)segue.destinationViewController;
+            dateVC.createNewDinnerPartyDateDelegate = self;
+        }
+    }
+}
+
+-(void)didFinishSelectingDate:(NSDate *)dateOfDinnerParty{
+   if (dateOfDinnerParty != nil) {
+        NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
+        [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+        self.dateOfDinnerPartyTextField.text = [dateFormatter stringFromDate: dateOfDinnerParty];
+        [self.dateOfDinnerPartyTextField endEditing:YES];
+        NSLog(@"@%@", self.dateOfDinnerParty);
+    }
 }
 
 #pragma mark - UITableView Protocol Functions
@@ -88,6 +111,10 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 10;
 }
+
+
+
+#pragma mark - Save
 
 
 @end

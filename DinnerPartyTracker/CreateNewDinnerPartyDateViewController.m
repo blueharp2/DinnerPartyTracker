@@ -23,7 +23,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 #pragma mark - Date View Controller and Date Picker
@@ -32,27 +32,15 @@
 //    [[UINavigationBar appearance] setTitleTextAttributes:@{
 //            NSFontAttributeName: [UIFont fontWithName:@"Futura" size:16.0f]
 //                                                           }];
-    
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonSelected:)]];
 }
 
 
 -(void)doneButtonSelected:(UIBarButtonItem *)sender{
-   
     NSDate *dateOfDinnerParty = [self.datePicker date];
-    CreateNewDinnerPartyViewController *createNewDinnerPartyViewController = [[CreateNewDinnerPartyViewController alloc]init];
-    createNewDinnerPartyViewController.dateOfDinnerParty = dateOfDinnerParty;
-    NSLog(@"done button selected");
+    [self.createNewDinnerPartyDateDelegate didFinishSelectingDate: dateOfDinnerParty];
+    [self.navigationController popViewControllerAnimated:YES];
     
-    [self performSegueWithIdentifier:@"backToCreateVCSegue" sender:sender];
-    
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"backToCreateVCSegue"]){
-        CreateNewDinnerPartyViewController *createNewDinnerPartyViewController = (CreateNewDinnerPartyViewController *)segue.destinationViewController;
-        createNewDinnerPartyViewController.dateOfDinnerParty = self.datePicker.date;
-    }
 }
 
 @end
