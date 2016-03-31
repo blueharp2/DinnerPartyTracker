@@ -34,17 +34,17 @@
     self.addMenuItemButton.layer.cornerRadius = 4;
     [self.dateOfDinnerPartyTextField setDelegate:self];
     [self.guestsNamesTextField setDelegate:self];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonSelected:)]];
    
     // [self setupMainViewController];
     
     [FireBaseService saveToFireBase:@"Testing 1,2,3"];
     [FireBaseService readFromFirebase];
-   
+    
 
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
     
 }
 
@@ -59,6 +59,8 @@
     self.menuItemsTableVIew.delegate = self;
     self.menuItemsTableVIew.dataSource = self;
     self.addMenuItemButton.layer.cornerRadius = 4;
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonSelected:)]];
+
 }
 
 #pragma mark - Segues & VC Delegates
@@ -124,16 +126,29 @@
 -(UITableViewCell *)tableview:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [self.menuItemsTableVIew dequeueReusableCellWithIdentifier:@"menuItemCell" forIndexPath:indexPath];
     
+    
+    
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
     return 10;
 }
 
 
 
 #pragma mark - Save
+
+-(void)saveButtonSelected:(UIBarButtonItem *)sender{
+//    DinnerParty *dinnerparty = [[DinnerParty alloc]initWithDateOfDinnerParty:self.dateOfDinnerParty guestsNames:self.guestsNames menuItems:self.menuItems];
+    
+//    DinnerParty *dinnerParty = [DinnerParty new];
+//    dinnerParty.guestsNames = self.guestsNames;
+    //dinnerParty.dateOfDinnerParty = self.dateOfDinnerParty;
+    
+}
+
 
 
 @end
