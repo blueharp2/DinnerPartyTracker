@@ -9,6 +9,7 @@
 #import "CreateNewDinnerPartyViewController.h"
 #import "FireBaseService.h"
 #import <Firebase/Firebase.h>
+#import "DinnerParty.h"
 #import "MenuItems.h"
 #import "CreateNewDinnerPartyDateViewController.h"
 #import "CreateNewDinnerPartyDetailViewController.h"
@@ -43,6 +44,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
     
 }
 
@@ -81,6 +83,8 @@
         NSDateFormatter *dateFormatter =[[NSDateFormatter alloc]init];
         [dateFormatter setDateStyle:NSDateFormatterLongStyle];
         self.dateOfDinnerPartyTextField.text = [dateFormatter stringFromDate: dateOfDinnerParty];
+        
+        self.dateOfDinnerParty = dateOfDinnerParty;
         [self.dateOfDinnerPartyTextField endEditing:YES];
         [self.dateOfDinnerPartyTextField resignFirstResponder];
     }
@@ -108,7 +112,7 @@
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     if (self.guestsNamesTextField != nil) {
         self.guestsNames = self.guestsNamesTextField.text;
-
+        
         [self.guestsNamesTextField resignFirstResponder];
         [self.guestsNamesTextField endEditing:YES];
     }
