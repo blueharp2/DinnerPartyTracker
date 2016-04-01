@@ -96,6 +96,13 @@
 -(void)didSaveMenuItems:(NSString *)menuItem cookBook:(NSString *)cookBookTitle url:(NSURL *)url{
     NSLog(@"%@", menuItem);
     
+    
+//        MenuItems *menuItems = [MenuItems new];
+//        menuItems.menuItemName = menuItem;
+//        menuItems.cookboookName = cookBookTitle;
+//        menuItems.url = url;
+    
+    
     if (self.menuItemsDictionary == nil) {
         self.menuItemsDictionary = [NSMutableDictionary new];
         [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
