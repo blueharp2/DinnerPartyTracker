@@ -94,7 +94,14 @@
 
 
 -(void)didSaveMenuItems:(NSString *)menuItem cookBook:(NSString *)cookBookTitle url:(NSURL *)url{
-    //NSLog(@"%@", menuItem);
+    NSLog(@"%@", menuItem);
+    
+    if (self.menuItemsDictionary == nil) {
+        self.menuItemsDictionary = [NSMutableDictionary new];
+        [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
+        [self.menuItemsDictionary setValue:cookBookTitle forKey:@"Cookbook Title"];
+        [self.menuItemsDictionary setValue:url forKey:@"url"];
+    }
 }
 
 

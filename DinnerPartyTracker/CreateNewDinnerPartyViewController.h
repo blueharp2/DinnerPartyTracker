@@ -18,6 +18,6 @@
 @property (strong, nonatomic)NSDate *dateOfDinnerParty;
 @property (strong, nonatomic)NSString *guestsNames;
 @property (strong, nonatomic)MenuItems *menuItems;
-//@property (strong, nonatomic)NSMutableArray<MenuItems *> *menuItems;
+@property (strong, nonatomic)NSMutableDictionary *menuItemsDictionary;
 
 @end
