@@ -107,7 +107,7 @@
         self.menuItemsArray = [NSMutableArray new];
     }
     
-    
+    //Fix this.  It is overwriting the first entry to the array?
     if (self.menuItemsDictionary == nil) {
         self.menuItemsDictionary = [NSMutableDictionary new];
         [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
@@ -164,9 +164,14 @@
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"menuItemCell"];
         }
     
-        cell.textLabel.text = [self.menuItemsDictionary valueForKey:@"Menu Item"];
-        cell.detailTextLabel.text = [self.menuItemsDictionary valueForKey:@"Cookbook Title"];
-        
+    for (id item in self.menuItemsArray){
+            cell.textLabel.text = [item valueForKey:@"Menu Item"];
+            cell.detailTextLabel.text = [item valueForKey:@"Cookbook Title"];
+        }
+
+//        cell.textLabel.text = [self.menuItemsDictionary valueForKey:@"Menu Item"];
+//        cell.detailTextLabel.text = [self.menuItemsDictionary valueForKey:@"Cookbook Title"];
+    
         return cell;
 }
 //
