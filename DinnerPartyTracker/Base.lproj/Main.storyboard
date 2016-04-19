@@ -191,7 +191,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E0V-Yi-KQa">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" restorationIdentifier="cellTitle" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E0V-Yi-KQa">
                                                     <rect key="frame" x="15" y="5" width="32" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -261,6 +261,8 @@
                     </view>
                     <connections>
                         <outlet property="addMenuItemButton" destination="lof-kw-bLQ" id="12u-Bz-vb8"/>
+                        <outlet property="cellSubtitle" destination="8Ya-8v-CGy" id="NpE-zN-uL3"/>
+                        <outlet property="cellTitle" destination="E0V-Yi-KQa" id="HhM-Je-agc"/>
                         <outlet property="dateOfDinnerPartyTextField" destination="F5I-bd-wF0" id="02L-hu-8Ox"/>
                         <outlet property="guestsNamesTextField" destination="IG1-lk-9Ru" id="Mvt-gM-6Eh"/>
                         <outlet property="menuItemsTableVIew" destination="eyP-Ps-5s1" id="35t-4a-ns0"/>
