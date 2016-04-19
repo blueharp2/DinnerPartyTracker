@@ -103,6 +103,9 @@
 //        menuItems.menuItemName = menuItem;
 //        menuItems.cookboookName = cookBookTitle;
 //        menuItems.url = url;
+    if (self.menuItemsArray.count == 0){
+        self.menuItemsArray = [NSMutableArray new];
+    }
     
     
     if (self.menuItemsDictionary == nil) {
@@ -110,8 +113,23 @@
         [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
         [self.menuItemsDictionary setValue:cookBookTitle forKey:@"Cookbook Title"];
         [self.menuItemsDictionary setValue:url forKey:@"url"];
+        [self.menuItemsArray addObject: self.menuItemsDictionary];
+    }else{
+        [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
+        [self.menuItemsDictionary setValue:cookBookTitle forKey:@"Cookbook Title"];
+        [self.menuItemsDictionary setValue:url forKey:@"url"];
+        [self.menuItemsArray addObject: self.menuItemsDictionary];
     }
 }
+
+
+//    if (self.menuItemsDictionary == nil) {
+//        self.menuItemsDictionary = [NSMutableDictionary new];
+//        [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
+//        [self.menuItemsDictionary setValue:cookBookTitle forKey:@"Cookbook Title"];
+//        [self.menuItemsDictionary setValue:url forKey:@"url"];
+//    }
+//}
 
 
 #pragma mark - UITextField
@@ -166,7 +184,8 @@
 //}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.menuItemsDictionary.count;
+    //return self.menuItemsDictionary.count;
+    return self.menuItemsArray.count;
 }
 
 
