@@ -23,9 +23,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *menuItemsTableVIew;
 @property (weak, nonatomic) IBOutlet UIButton *addMenuItemButton;
 
-@property (weak, nonatomic) IBOutlet UILabel *cellTitle;
-
-@property (weak, nonatomic) IBOutlet UILabel *cellSubtitle;
 
 @end
 
@@ -35,12 +32,12 @@
     [super viewDidLoad];
     
     //Delete these when setupMainViewController is done
-    self.addMenuItemButton.layer.cornerRadius = 4;
-    [self.dateOfDinnerPartyTextField setDelegate:self];
-    [self.guestsNamesTextField setDelegate:self];
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonSelected:)]];
-   
-    // [self setupMainViewController];
+//    self.addMenuItemButton.layer.cornerRadius = 4;
+//    [self.dateOfDinnerPartyTextField setDelegate:self];
+//    [self.guestsNamesTextField setDelegate:self];
+//    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonSelected:)]];
+//   
+    [self setupMainViewController];
     
     [FireBaseService saveToFireBase:@"Testing 1,2,3"];
     [FireBaseService readFromFirebase];
@@ -49,6 +46,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.menuItemsTableVIew reloadData];
     
 }
 
@@ -141,13 +139,31 @@
 
 #pragma mark - UITableView Protocol Functions
 
--(UITableViewCell *)tableview:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [self.menuItemsTableVIew dequeueReusableCellWithIdentifier:@"menuItemCell" forIndexPath:indexPath];
-     self.cellTitle.text = [self.menuItemsDictionary valueForKey:@"Menu Item"];
-     self.cellSubtitle.text = [self.menuItemsDictionary valueForKey:@"Cookbook Title"];
     
-    return cell;
+        if (!cell) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"menuItemCell"];
+        }
+    
+        cell.textLabel.text = [self.menuItemsDictionary valueForKey:@"Menu Item"];
+        cell.detailTextLabel.text = [self.menuItemsDictionary valueForKey:@"Cookbook Title"];
+        
+        return cell;
 }
+//
+//-(UITableViewCell *)tableview:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    UITableViewCell *cell = [self.menuItemsTableVIew dequeueReusableCellWithIdentifier:@"menuItemCell" forIndexPath:indexPath];
+//    
+//    if (!cell) {
+//        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"menuItemCell"];
+//    }
+//    
+//    cell.textLabel.text = [self.menuItemsDictionary valueForKey:@"Menu Item"];
+//    cell.detailTextLabel.text = [self.menuItemsDictionary valueForKey:@"Cookbook Title"];
+//    
+//    return cell;
+//}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.menuItemsDictionary.count;

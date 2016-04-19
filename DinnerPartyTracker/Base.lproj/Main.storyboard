@@ -198,7 +198,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Ya-8v-CGy">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" restorationIdentifier="cellSubtitle" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Ya-8v-CGy">
                                                     <rect key="frame" x="15" y="25" width="41" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -261,8 +261,6 @@
                     </view>
                     <connections>
                         <outlet property="addMenuItemButton" destination="lof-kw-bLQ" id="12u-Bz-vb8"/>
-                        <outlet property="cellSubtitle" destination="8Ya-8v-CGy" id="NpE-zN-uL3"/>
-                        <outlet property="cellTitle" destination="E0V-Yi-KQa" id="HhM-Je-agc"/>
                         <outlet property="dateOfDinnerPartyTextField" destination="F5I-bd-wF0" id="02L-hu-8Ox"/>
                         <outlet property="guestsNamesTextField" destination="IG1-lk-9Ru" id="Mvt-gM-6Eh"/>
                         <outlet property="menuItemsTableVIew" destination="eyP-Ps-5s1" id="35t-4a-ns0"/>
