@@ -98,30 +98,43 @@
 -(void)didSaveMenuItems:(NSString *)menuItem cookBook:(NSString *)cookBookTitle url:(NSURL *)url{
     NSLog(@"%@", menuItem);
     
-    
-//        MenuItems *menuItems = [MenuItems new];
-//        menuItems.menuItemName = menuItem;
-//        menuItems.cookboookName = cookBookTitle;
-//        menuItems.url = url;
     if (self.menuItemsArray.count == 0){
         self.menuItemsArray = [NSMutableArray new];
     }
     
-    //Fix this.  It is overwriting the first entry to the array?
     if (self.menuItemsDictionary == nil) {
         self.menuItemsDictionary = [NSMutableDictionary new];
-        [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
-        [self.menuItemsDictionary setValue:cookBookTitle forKey:@"Cookbook Title"];
-        [self.menuItemsDictionary setValue:url forKey:@"url"];
-        [self.menuItemsArray addObject: self.menuItemsDictionary];
-    }else{
-        [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
-        [self.menuItemsDictionary setValue:cookBookTitle forKey:@"Cookbook Title"];
-        [self.menuItemsDictionary setValue:url forKey:@"url"];
-        [self.menuItemsArray addObject: self.menuItemsDictionary];
+    }else {
+        self.menuItemsDictionary = [NSMutableDictionary new];
     }
+    
+//    if (self.menuItemsDictionary == nil) {
+//        self.menuItemsDictionary = [NSMutableDictionary new];
+//    }
+    
+    [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
+    [self.menuItemsDictionary setValue:cookBookTitle forKey:@"Cookbook Title"];
+    [self.menuItemsDictionary setValue:url forKey:@"url"];
+    [self.menuItemsArray addObject: self.menuItemsDictionary];
 }
+//        MenuItems *menuItems = [MenuItems new];
+//        menuItems.menuItemName = menuItem;
+//        menuItems.cookboookName = cookBookTitle;
+//        menuItems.url = url;
 
+//Fix this.  It is overwriting the first entry to the array?
+//    if (self.menuItemsDictionary == nil) {
+//        self.menuItemsDictionary = [NSMutableDictionary new];
+//        [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
+//        [self.menuItemsDictionary setValue:cookBookTitle forKey:@"Cookbook Title"];
+//        [self.menuItemsDictionary setValue:url forKey:@"url"];
+//        [self.menuItemsArray addObject: self.menuItemsDictionary];
+//    }else{
+//        [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
+//        [self.menuItemsDictionary setValue:cookBookTitle forKey:@"Cookbook Title"];
+//        [self.menuItemsDictionary setValue:url forKey:@"url"];
+//        [self.menuItemsArray addObject: self.menuItemsDictionary];
+//    }
 
 //    if (self.menuItemsDictionary == nil) {
 //        self.menuItemsDictionary = [NSMutableDictionary new];
@@ -163,6 +176,10 @@
         if (!cell) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"menuItemCell"];
         }
+    
+
+//    cell.textLabel.text = [self.menuItemsArray valueForKey:@"Menu Item"];
+//    cell.detailTextLabel.text = [self.menuItemsArray valueForKey:@"Cookbook Title"];
     
     for (id item in self.menuItemsArray){
             cell.textLabel.text = [item valueForKey:@"Menu Item"];
