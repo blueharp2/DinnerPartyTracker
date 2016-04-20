@@ -177,14 +177,18 @@
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"menuItemCell"];
         }
     
+        cell.textLabel.text = [self.menuItemsArray valueForKey:@"Menu Item"];
+        cell.detailTextLabel.text = [self.menuItemsArray valueForKey:@"Cookbook Title"];
+
 
 //    cell.textLabel.text = [self.menuItemsArray valueForKey:@"Menu Item"];
 //    cell.detailTextLabel.text = [self.menuItemsArray valueForKey:@"Cookbook Title"];
     
-    for (id item in self.menuItemsArray){
-            cell.textLabel.text = [item valueForKey:@"Menu Item"];
-            cell.detailTextLabel.text = [item valueForKey:@"Cookbook Title"];
-        }
+    
+//    for (id item in self.menuItemsArray){
+//            cell.textLabel.text = [item valueForKey:@"Menu Item"];
+//            cell.detailTextLabel.text = [item valueForKey:@"Cookbook Title"];
+//        }
 
 //        cell.textLabel.text = [self.menuItemsDictionary valueForKey:@"Menu Item"];
 //        cell.detailTextLabel.text = [self.menuItemsDictionary valueForKey:@"Cookbook Title"];
