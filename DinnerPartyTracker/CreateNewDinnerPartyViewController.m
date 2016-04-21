@@ -177,8 +177,12 @@
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"menuItemCell"];
         }
     
-        cell.textLabel.text = [self.menuItemsArray valueForKey:@"Menu Item"];
-        cell.detailTextLabel.text = [self.menuItemsArray valueForKey:@"Cookbook Title"];
+    cell.textLabel.text = [[self.menuItemsArray objectAtIndex:indexPath.row] objectForKey:@"Menu Item"];
+    cell.detailTextLabel.text = [[self.menuItemsArray objectAtIndex:indexPath.row] objectForKey:@"Cookbook Title"];
+    
+    
+//        cell.textLabel.text = [self.menuItemsArray valueForKey:@"Menu Item"];
+//        cell.detailTextLabel.text = [self.menuItemsArray valueForKey:@"Cookbook Title"];
 
 
 //    cell.textLabel.text = [self.menuItemsArray valueForKey:@"Menu Item"];
