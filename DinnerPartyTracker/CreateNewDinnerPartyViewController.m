@@ -143,10 +143,10 @@
     cell.textLabel.text = [[self.menuItemsArray objectAtIndex:indexPath.row] objectForKey:@"Menu Item"];
     
     if ([[[self.menuItemsArray objectAtIndex:indexPath.row] objectForKey:@"Cookbook Title"]  isEqual: @""]){
-      NSString *convertedUrl = [[[self.menuItemsArray objectAtIndex:indexPath.row] objectForKey:@"url"]absoluteString];
+        NSString *convertedUrl = [[[self.menuItemsArray objectAtIndex:indexPath.row] objectForKey:@"url"]absoluteString];
         cell.detailTextLabel.text = convertedUrl;
     } else {
-    cell.detailTextLabel.text = [[self.menuItemsArray objectAtIndex:indexPath.row] objectForKey:@"Cookbook Title"];
+        cell.detailTextLabel.text = [[self.menuItemsArray objectAtIndex:indexPath.row] objectForKey:@"Cookbook Title"];
     }
     
 //    cell.textLabel.text = [[self.menuItemsArray objectAtIndex:indexPath.row] objectForKey:@"Menu Item"];
