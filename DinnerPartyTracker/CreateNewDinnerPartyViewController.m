@@ -30,29 +30,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //Delete these when setupMainViewController is done
-//    self.addMenuItemButton.layer.cornerRadius = 4;
-//    [self.dateOfDinnerPartyTextField setDelegate:self];
-//    [self.guestsNamesTextField setDelegate:self];
-//    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonSelected:)]];
-//   
     [self setupMainViewController];
     
     [FireBaseService saveToFireBase:@"Testing 1,2,3"];
     [FireBaseService readFromFirebase];
-    
-
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.menuItemsTableVIew reloadData];
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    
 }
 
 -(void)setupMainViewController{
@@ -62,7 +52,6 @@
     self.menuItemsTableVIew.dataSource = self;
     self.addMenuItemButton.layer.cornerRadius = 4;
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonSelected:)]];
-
 }
 
 #pragma mark - Segues & VC Delegates
@@ -108,10 +97,6 @@
         self.menuItemsDictionary = [NSMutableDictionary new];
     }
     
-//    if (self.menuItemsDictionary == nil) {
-//        self.menuItemsDictionary = [NSMutableDictionary new];
-//    }
-    
     [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
     [self.menuItemsDictionary setValue:cookBookTitle forKey:@"Cookbook Title"];
     [self.menuItemsDictionary setValue:url forKey:@"url"];
@@ -121,28 +106,6 @@
 //        menuItems.menuItemName = menuItem;
 //        menuItems.cookboookName = cookBookTitle;
 //        menuItems.url = url;
-
-//Fix this.  It is overwriting the first entry to the array?
-//    if (self.menuItemsDictionary == nil) {
-//        self.menuItemsDictionary = [NSMutableDictionary new];
-//        [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
-//        [self.menuItemsDictionary setValue:cookBookTitle forKey:@"Cookbook Title"];
-//        [self.menuItemsDictionary setValue:url forKey:@"url"];
-//        [self.menuItemsArray addObject: self.menuItemsDictionary];
-//    }else{
-//        [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
-//        [self.menuItemsDictionary setValue:cookBookTitle forKey:@"Cookbook Title"];
-//        [self.menuItemsDictionary setValue:url forKey:@"url"];
-//        [self.menuItemsArray addObject: self.menuItemsDictionary];
-//    }
-
-//    if (self.menuItemsDictionary == nil) {
-//        self.menuItemsDictionary = [NSMutableDictionary new];
-//        [self.menuItemsDictionary setValue:menuItem forKey:@"Menu Item"];
-//        [self.menuItemsDictionary setValue:cookBookTitle forKey:@"Cookbook Title"];
-//        [self.menuItemsDictionary setValue:url forKey:@"url"];
-//    }
-//}
 
 
 #pragma mark - UITextField
@@ -173,48 +136,17 @@
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [self.menuItemsTableVIew dequeueReusableCellWithIdentifier:@"menuItemCell" forIndexPath:indexPath];
     
-        if (!cell) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"menuItemCell"];
-        }
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"menuItemCell"];
+    }
     
     cell.textLabel.text = [[self.menuItemsArray objectAtIndex:indexPath.row] objectForKey:@"Menu Item"];
     cell.detailTextLabel.text = [[self.menuItemsArray objectAtIndex:indexPath.row] objectForKey:@"Cookbook Title"];
     
-    
-//        cell.textLabel.text = [self.menuItemsArray valueForKey:@"Menu Item"];
-//        cell.detailTextLabel.text = [self.menuItemsArray valueForKey:@"Cookbook Title"];
-
-
-//    cell.textLabel.text = [self.menuItemsArray valueForKey:@"Menu Item"];
-//    cell.detailTextLabel.text = [self.menuItemsArray valueForKey:@"Cookbook Title"];
-    
-    
-//    for (id item in self.menuItemsArray){
-//            cell.textLabel.text = [item valueForKey:@"Menu Item"];
-//            cell.detailTextLabel.text = [item valueForKey:@"Cookbook Title"];
-//        }
-
-//        cell.textLabel.text = [self.menuItemsDictionary valueForKey:@"Menu Item"];
-//        cell.detailTextLabel.text = [self.menuItemsDictionary valueForKey:@"Cookbook Title"];
-    
-        return cell;
+    return cell;
 }
-//
-//-(UITableViewCell *)tableview:(UITableView *)tableview cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    UITableViewCell *cell = [self.menuItemsTableVIew dequeueReusableCellWithIdentifier:@"menuItemCell" forIndexPath:indexPath];
-//    
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"menuItemCell"];
-//    }
-//    
-//    cell.textLabel.text = [self.menuItemsDictionary valueForKey:@"Menu Item"];
-//    cell.detailTextLabel.text = [self.menuItemsDictionary valueForKey:@"Cookbook Title"];
-//    
-//    return cell;
-//}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    //return self.menuItemsDictionary.count;
     return self.menuItemsArray.count;
 }
 
