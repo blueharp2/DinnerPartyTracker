@@ -173,10 +173,15 @@
     dinnerParty.dateOfDinnerParty = self.dateOfDinnerParty;
     dinnerParty.menuItems = menuItems;
     
-    for (id item in self.menuItemsArray){
-        menuItems.menuItemName = [[self.menuItemsArray objectAtIndex:item] objectForKey:@"Menu Item"];
-        menuItems.cookboookName = [[self.menuItemsArray objectAtIndex:item] objectForKey:@"Cookbook Title"];
-        menuItems.url = [[self.menuItemsArray objectAtIndex:item] objectForKey:@"url"];
+    for (int i = 0; i<[self.menuItemsArray count]; i++){
+        menuItems.menuItemName = [[self.menuItemsArray objectAtIndex:i] objectForKey:@"Menu Item"];
+        menuItems.cookboookName = [[self.menuItemsArray objectAtIndex:i] objectForKey:@"Cookbook Title"];
+        menuItems.url = [[self.menuItemsArray objectAtIndex:i] objectForKey:@"url"];
+        
+        
+//        menuItems.menuItemName = [[self.menuItemsArray objectAtIndex:item] objectForKey:@"Menu Item"];
+//        menuItems.cookboookName = [[self.menuItemsArray objectAtIndex:item] objectForKey:@"Cookbook Title"];
+//        menuItems.url = [[self.menuItemsArray objectAtIndex:item] objectForKey:@"url"];
     }
 }
 
