@@ -166,10 +166,18 @@
 -(void)saveButtonSelected:(UIBarButtonItem *)sender{
 //    DinnerParty *dinnerparty = [[DinnerParty alloc]initWithDateOfDinnerParty:self.dateOfDinnerParty guestsNames:self.guestsNames menuItems:self.menuItems];
     
-//    DinnerParty *dinnerParty = [DinnerParty new];
-//    dinnerParty.guestsNames = self.guestsNames;
-    //dinnerParty.dateOfDinnerParty = self.dateOfDinnerParty;
+    DinnerParty *dinnerParty = [DinnerParty new];
+    MenuItems *menuItems = [[MenuItems alloc]initWithMenuItemName:menuItems.menuItemName cookbookName:menuItems.cookboookName url:menuItems.url];
     
+    dinnerParty.guestsNames = self.guestsNames;
+    dinnerParty.dateOfDinnerParty = self.dateOfDinnerParty;
+    dinnerParty.menuItems = menuItems;
+    
+    for (id item in self.menuItemsArray){
+        menuItems.menuItemName = [[self.menuItemsArray objectAtIndex:item] objectForKey:@"Menu Item"];
+        menuItems.cookboookName = [[self.menuItemsArray objectAtIndex:item] objectForKey:@"Cookbook Title"];
+        menuItems.url = [[self.menuItemsArray objectAtIndex:item] objectForKey:@"url"];
+    }
 }
 
 

@@ -14,6 +14,8 @@
 
 //const NSString *MY_ROOT_URL = @"https://dinnerpartytracker.firebaseio.com";
 
+//saveToFireBase and readFromFirebase are from the quick start examples in the firebase quick start docs for iOS
+
 +(void)saveToFireBase: (NSString *)test{
     Firebase *myRootURL = [[Firebase alloc] initWithUrl: @"https://dinnerpartytracker.firebaseio.com"];
 
@@ -24,10 +26,10 @@
 +(void)readFromFirebase{
     Firebase *myRootURL = [[Firebase alloc] initWithUrl: @"https://dinnerpartytracker.firebaseio.com"];
     
-[myRootURL observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-    NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
-}];
-
+    [myRootURL observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"%@ -> %@", snapshot.key, snapshot.value);
+    }];
+    
 }
 
 
