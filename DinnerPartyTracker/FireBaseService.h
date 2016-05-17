@@ -14,8 +14,12 @@
 
 //extern const NSString *MY_ROOT_URL;
 
-+(void)saveToFireBase: (NSString *)test;
+//+(void)saveToFireBase: (NSString *)test;
+
++(void)saveToFireBase: (DinnerParty *)dinnerParty;
 +(void)readFromFirebase;
+
+
 
 
 @end

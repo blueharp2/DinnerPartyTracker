@@ -8,6 +8,7 @@
 
 #import "FireBaseService.h"
 #import <Firebase/Firebase.h>
+#import "DinnerParty.h"
 
 
 @implementation FireBaseService
@@ -16,12 +17,17 @@
 
 //saveToFireBase and readFromFirebase are from the quick start examples in the firebase quick start docs for iOS
 
-+(void)saveToFireBase: (NSString *)test{
+//+(void)saveToFireBase: (NSString *)test{
+//    Firebase *myRootURL = [[Firebase alloc] initWithUrl: @"https://dinnerpartytracker.firebaseio.com"];
+//
+//    [myRootURL setValue:test];
+//}
+
++(void)saveToFireBase: (DinnerParty *)dinnerParty{
     Firebase *myRootURL = [[Firebase alloc] initWithUrl: @"https://dinnerpartytracker.firebaseio.com"];
 
-    [myRootURL setValue:test];
+    [myRootURL setValue:dinnerParty];
 }
-
 
 +(void)readFromFirebase{
     Firebase *myRootURL = [[Firebase alloc] initWithUrl: @"https://dinnerpartytracker.firebaseio.com"];
