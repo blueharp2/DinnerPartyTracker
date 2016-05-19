@@ -19,6 +19,6 @@
 @property (strong, nonatomic)NSString *guestsNames;
 @property (strong, nonatomic)MenuItems *menuItems;
 @property (strong, nonatomic)NSMutableDictionary *menuItemsDictionary;
-@property (strong, nonatomic)NSMutableArray<NSMutableDictionary *> *menuItemsArray;
+@property (strong, nonatomic)NSMutableArray <NSMutableDictionary *> *menuItemsArray;
 
 @end
