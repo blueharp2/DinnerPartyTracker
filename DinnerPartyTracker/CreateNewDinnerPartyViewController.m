@@ -160,29 +160,17 @@
 #pragma mark - Save
 
 -(void)saveButtonSelected:(UIBarButtonItem *)sender{
-
     
-//    MenuItems *menuItems = [[MenuItems alloc]initWithMenuItemName:menuItems.menuItemName cookbookName:menuItems.cookboookName url:menuItems.url];
     
-//    DinnerParty *dinnerParty = [DinnerParty new];
-    MenuItems *menuItems = [MenuItems new];
-//
-//    dinnerParty.dateOfDinnerParty = self.dateOfDinnerParty;
-//    dinnerParty.guestsNames = self.guestsNames;
-//    
-//    dinnerParty.menuItems = menuItems;
+    MenuItems *menuItems = [[MenuItems alloc]initWithMenuItemName:menuItems.menuItemName cookbookName:menuItems.cookboookName url:menuItems.url];
     
     for (int i = 0; i<[self.menuItemsArray count]; i++){
         menuItems.menuItemName = [[self.menuItemsArray objectAtIndex:i] objectForKey:@"Menu Item"];
         menuItems.cookboookName = [[self.menuItemsArray objectAtIndex:i] objectForKey:@"Cookbook Title"];
         menuItems.url = [[self.menuItemsArray objectAtIndex:i] objectForKey:@"url"];
-        
-//        menuItems.menuItemName = [[self.menuItemsArray objectAtIndex:item] objectForKey:@"Menu Item"];
-//        menuItems.cookboookName = [[self.menuItemsArray objectAtIndex:item] objectForKey:@"Cookbook Title"];
-//        menuItems.url = [[self.menuItemsArray objectAtIndex:item] objectForKey:@"url"];
-        
     }
-        DinnerParty *dinnerParty = [[DinnerParty alloc]initWithDateOfDinnerParty:self.dateOfDinnerParty guestsNames:self.guestsNames menuItems:menuItems];
+    
+    DinnerParty *dinnerParty = [[DinnerParty alloc]initWithDateOfDinnerParty:self.dateOfDinnerParty guestsNames:self.guestsNames menuItems:menuItems];
     
     [FireBaseService saveToFireBase:dinnerParty];
     
